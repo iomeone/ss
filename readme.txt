@@ -31,3 +31,15 @@ pscpp --ucns output/Control.Monad/corefn.json output/Data.EuclideanRing/corefn.j
 pause
 
 
+output file ->$(IntDir)/%(RelativeDir)/
+
+
+juce 's projucer  compiler flags
+1,vs include 
+/I"./../../glm" /wd"4201"
+2,mac os include 
+-I../../glm
+
+juce's projucer link flags 
+1,vs
+/subsystem:console /entry:mainCRTStartup
