@@ -23,6 +23,7 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>./</AdditionalIncludeDirectories>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\%(Directory)</ObjectFileName>
     </ClCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\\Microsoft.Cpp.targets" />
@@ -208,7 +209,9 @@
     <ClCompile Include="D:\dev\pcc\src\output\src\ffi\assert\test-assert.cpp" />
     <ClCompile Include="D:\dev\pcc\src\output\src\ffi\console\effect-console.cpp" />
     <ClCompile Include="D:\dev\pcc\src\output\src\ffi\effect\effect-uncurried.cpp" />
-    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\effect\effect.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\effect\effect.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="D:\dev\pcc\src\output\src\ffi\foldable-traversable\data-foldable.cpp" />
     <ClCompile Include="D:\dev\pcc\src\output\src\ffi\foldable-traversable\data-foldablewithindex.cpp" />
     <ClCompile Include="D:\dev\pcc\src\output\src\ffi\foldable-traversable\data-traversable.cpp" />
