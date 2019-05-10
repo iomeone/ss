@@ -8,14 +8,14 @@
 // Stability   :  experimental
 // Portability :
 //
-// A simple dictionary optimized for this runtime's particular use ¨C
+// A simple dictionary optimized for this runtime's particular use â€“
 // *not* intended for general use or as a replacement for containers
 // such as std::map or std::unordered_map. It relies on the following
 // assumptions:
 //
 //    1) Keys are C-type string literals. No copying or (memory management)
 //       of the keys occurs
-//    2) The number of elements in the container is generally small ¨C say,
+//    2) The number of elements in the container is generally small â€“ say,
 //       under 20. There is no sorting and a linear search is used to
 //       locate elements
 //

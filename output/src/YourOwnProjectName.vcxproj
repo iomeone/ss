@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7BB06DF3-1281-42BB-8ADF-77A37C372AE2}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>./</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakePreprocessorDefinitions>
+    </NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>
+            .D:\dev\pcc\src\output\src;
+            .D:\dev\pcc\src\output\src\.vs;
+            .D:\dev\pcc\src\output\src\.vs\YourOwnProjectName;
+            .D:\dev\pcc\src\output\src\.vs\YourOwnProjectName\v14;
+            .D:\dev\pcc\src\output\src\.vs\YourOwnProjectName\v15;
+            .D:\dev\pcc\src\output\src\.vs\YourOwnProjectName\v15\ipch;
+            .D:\dev\pcc\src\output\src\.vs\YourOwnProjectName\v15\ipch\AutoPCH;
+            .D:\dev\pcc\src\output\src\Control_Applicative;
+            .D:\dev\pcc\src\output\src\Control_Apply;
+            .D:\dev\pcc\src\output\src\Control_Bind;
+            .D:\dev\pcc\src\output\src\Control_Category;
+            .D:\dev\pcc\src\output\src\Control_Monad;
+            .D:\dev\pcc\src\output\src\Control_Semigroupoid;
+            .D:\dev\pcc\src\output\src\Data_Boolean;
+            .D:\dev\pcc\src\output\src\Data_BooleanAlgebra;
+            .D:\dev\pcc\src\output\src\Data_Bounded;
+            .D:\dev\pcc\src\output\src\Data_CommutativeRing;
+            .D:\dev\pcc\src\output\src\Data_DivisionRing;
+            .D:\dev\pcc\src\output\src\Data_Eq;
+            .D:\dev\pcc\src\output\src\Data_EuclideanRing;
+            .D:\dev\pcc\src\output\src\Data_Field;
+            .D:\dev\pcc\src\output\src\Data_Function;
+            .D:\dev\pcc\src\output\src\Data_Functor;
+            .D:\dev\pcc\src\output\src\Data_HeytingAlgebra;
+            .D:\dev\pcc\src\output\src\Data_Monoid;
+            .D:\dev\pcc\src\output\src\Data_Monoid_Additive;
+            .D:\dev\pcc\src\output\src\Data_Monoid_Conj;
+            .D:\dev\pcc\src\output\src\Data_Monoid_Disj;
+            .D:\dev\pcc\src\output\src\Data_Monoid_Dual;
+            .D:\dev\pcc\src\output\src\Data_Monoid_Endo;
+            .D:\dev\pcc\src\output\src\Data_Monoid_Multiplicative;
+            .D:\dev\pcc\src\output\src\Data_NaturalTransformation;
+            .D:\dev\pcc\src\output\src\Data_Ord;
+            .D:\dev\pcc\src\output\src\Data_Ordering;
+            .D:\dev\pcc\src\output\src\Data_Ord_Unsafe;
+            .D:\dev\pcc\src\output\src\Data_Ring;
+            .D:\dev\pcc\src\output\src\Data_Semigroup;
+            .D:\dev\pcc\src\output\src\Data_Semigroup_First;
+            .D:\dev\pcc\src\output\src\Data_Semigroup_Last;
+            .D:\dev\pcc\src\output\src\Data_Semiring;
+            .D:\dev\pcc\src\output\src\Data_Show;
+            .D:\dev\pcc\src\output\src\Data_Symbol;
+            .D:\dev\pcc\src\output\src\Data_Unit;
+            .D:\dev\pcc\src\output\src\Data_Void;
+            .D:\dev\pcc\src\output\src\Debug;
+            .D:\dev\pcc\src\output\src\Debug\YourOwnP.7BB06DF3.tlog;
+            .D:\dev\pcc\src\output\src\Effect;
+            .D:\dev\pcc\src\output\src\Effect_Class;
+            .D:\dev\pcc\src\output\src\Effect_Class_Console;
+            .D:\dev\pcc\src\output\src\Effect_Console;
+            .D:\dev\pcc\src\output\src\Effect_Uncurried;
+            .D:\dev\pcc\src\output\src\Effect_Unsafe;
+            .D:\dev\pcc\src\output\src\ffi;
+            .D:\dev\pcc\src\output\src\ffi\arrays;
+            .D:\dev\pcc\src\output\src\ffi\assert;
+            .D:\dev\pcc\src\output\src\ffi\console;
+            .D:\dev\pcc\src\output\src\ffi\effect;
+            .D:\dev\pcc\src\output\src\ffi\foldable-traversable;
+            .D:\dev\pcc\src\output\src\ffi\functions;
+            .D:\dev\pcc\src\output\src\ffi\integers;
+            .D:\dev\pcc\src\output\src\ffi\math;
+            .D:\dev\pcc\src\output\src\ffi\partial;
+            .D:\dev\pcc\src\output\src\ffi\prelude;
+            .D:\dev\pcc\src\output\src\ffi\refs;
+            .D:\dev\pcc\src\output\src\ffi\st;
+            .D:\dev\pcc\src\output\src\ffi\unsafe_coerce;
+            .D:\dev\pcc\src\output\src\Main;
+            .D:\dev\pcc\src\output\src\Prelude;
+            .D:\dev\pcc\src\output\src\Record_Unsafe;
+            .D:\dev\pcc\src\output\src\Type_Data_Row;
+            .D:\dev\pcc\src\output\src\Type_Data_RowList;
+        </NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\dev\pcc\src\output\src\dictionary.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\functions.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\purescript.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\recursion.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Control_Applicative\Control_Applicative.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Control_Apply\Control_Apply.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Control_Bind\Control_Bind.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Control_Category\Control_Category.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Control_Monad\Control_Monad.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Control_Semigroupoid\Control_Semigroupoid.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Boolean\Data_Boolean.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_BooleanAlgebra\Data_BooleanAlgebra.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Bounded\Data_Bounded.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_CommutativeRing\Data_CommutativeRing.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_DivisionRing\Data_DivisionRing.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Eq\Data_Eq.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_EuclideanRing\Data_EuclideanRing.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Field\Data_Field.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Function\Data_Function.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Functor\Data_Functor.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_HeytingAlgebra\Data_HeytingAlgebra.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Monoid\Data_Monoid.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Monoid_Additive\Data_Monoid_Additive.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Monoid_Conj\Data_Monoid_Conj.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Monoid_Disj\Data_Monoid_Disj.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Monoid_Dual\Data_Monoid_Dual.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Monoid_Endo\Data_Monoid_Endo.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Monoid_Multiplicative\Data_Monoid_Multiplicative.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_NaturalTransformation\Data_NaturalTransformation.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Ord\Data_Ord.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Ordering\Data_Ordering.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Ord_Unsafe\Data_Ord_Unsafe.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Ring\Data_Ring.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Semigroup\Data_Semigroup.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Semigroup_First\Data_Semigroup_First.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Semigroup_Last\Data_Semigroup_Last.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Semiring\Data_Semiring.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Show\Data_Show.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Symbol\Data_Symbol.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Unit\Data_Unit.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Data_Void\Data_Void.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Effect\Effect.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Effect_Class\Effect_Class.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Effect_Class_Console\Effect_Class_Console.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Effect_Console\Effect_Console.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Effect_Uncurried\Effect_Uncurried.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Effect_Unsafe\Effect_Unsafe.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Main\Main.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Prelude\Prelude.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Record_Unsafe\Record_Unsafe.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Type_Data_Row\Type_Data_Row.h" />
+    <ClInclude Include="D:\dev\pcc\src\output\src\Type_Data_RowList\Type_Data_RowList.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\dev\pcc\src\output\src\purescript.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Control_Applicative\Control_Applicative.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Control_Apply\Control_Apply.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Control_Bind\Control_Bind.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Control_Category\Control_Category.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Control_Monad\Control_Monad.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Control_Semigroupoid\Control_Semigroupoid.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Boolean\Data_Boolean.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_BooleanAlgebra\Data_BooleanAlgebra.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Bounded\Data_Bounded.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_CommutativeRing\Data_CommutativeRing.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_DivisionRing\Data_DivisionRing.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Eq\Data_Eq.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_EuclideanRing\Data_EuclideanRing.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Field\Data_Field.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Function\Data_Function.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Functor\Data_Functor.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_HeytingAlgebra\Data_HeytingAlgebra.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Monoid\Data_Monoid.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Monoid_Additive\Data_Monoid_Additive.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Monoid_Conj\Data_Monoid_Conj.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Monoid_Disj\Data_Monoid_Disj.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Monoid_Dual\Data_Monoid_Dual.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Monoid_Endo\Data_Monoid_Endo.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Monoid_Multiplicative\Data_Monoid_Multiplicative.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_NaturalTransformation\Data_NaturalTransformation.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Ord\Data_Ord.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Ordering\Data_Ordering.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Ord_Unsafe\Data_Ord_Unsafe.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Ring\Data_Ring.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Semigroup\Data_Semigroup.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Semigroup_First\Data_Semigroup_First.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Semigroup_Last\Data_Semigroup_Last.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Semiring\Data_Semiring.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Show\Data_Show.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Symbol\Data_Symbol.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Unit\Data_Unit.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Data_Void\Data_Void.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Effect\Effect.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Effect_Class\Effect_Class.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Effect_Class_Console\Effect_Class_Console.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Effect_Console\Effect_Console.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Effect_Uncurried\Effect_Uncurried.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Effect_Unsafe\Effect_Unsafe.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\arrays\data-array.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\assert\test-assert.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\console\effect-console.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\effect\effect-uncurried.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\effect\effect.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\foldable-traversable\data-foldable.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\foldable-traversable\data-foldablewithindex.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\foldable-traversable\data-traversable.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\functions\data-functions-uncurried.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\integers\data-int.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\math\math.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\partial\partial-unsafe.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\prelude\control-apply.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\prelude\data-bounded.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\prelude\data-eq.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\prelude\data-euclideanring.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\prelude\data-functor.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\prelude\data-heytingalgebra.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\prelude\data-ord.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\prelude\data-ring.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\prelude\data-semigroup.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\prelude\data-semiring.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\prelude\data-show.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\prelude\data-unit.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\refs\effect-ref.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\st\control-monad-st-internal.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\ffi\unsafe_coerce\unsafe-coerce.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Main\Main.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Prelude\Prelude.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Record_Unsafe\Record_Unsafe.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Type_Data_Row\Type_Data_Row.cpp" />
+    <ClCompile Include="D:\dev\pcc\src\output\src\Type_Data_RowList\Type_Data_RowList.cpp" />
+  </ItemGroup>
+</Project>
