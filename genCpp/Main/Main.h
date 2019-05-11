@@ -9,7 +9,8 @@ namespace Main {
 
 using namespace purescript;
 
-auto main() -> boxed;
+auto factorial() -> const boxed&;
+auto main() -> const boxed&;
 
 } // end namespace Main
 

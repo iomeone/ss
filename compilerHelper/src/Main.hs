@@ -13,6 +13,7 @@ import           System.Directory.Tree (
                                         )
 import           System.Directory
 import           System.FilePath
+import           System.Environment
 
 import           System.Process                    
 
@@ -56,8 +57,14 @@ main :: IO ()
 main = do
   let 
     pursOutput = "genPurs"
+    needCopy = [("Main", "Main.cpp"), 
+                ("Main", "Main.h")
+                ]
+  getExecutablePath 
 
-  curDir <- getCurrentDirectory
+  -- curDir <- getCurrentDirectory
+
+  curDir <- fmap takeDirectory getExecutablePath
 
   srcList <-  getDirFileList (curDir </> "src") ".purs"
 
@@ -76,15 +83,23 @@ main = do
 
 
 
+  -- putStrLn $ (takeDirectory curDir) </> "genCpp" </> "Main"
+  -- putStrLn $ (takeDirectory curDir) </> "juce" </> "Source"
+
+  putStrLn $ curDir </> "genCpp" </> "Main"
+  putStrLn $ curDir </> "juce" </> "Source"
+
+  -- callProcess "cp"  [ curDir </> "genCpp" </> "Main" </> "Main.cpp",  curDir </> "juce" </> "Source" </> "Main"]
+  
+  mapM (\pathTuple -> copyFile (curDir </> "genCpp" </> fst pathTuple </> snd pathTuple )  (curDir </> "juce" </> "Source" </>  fst pathTuple </> snd pathTuple))
+       needCopy
+
+  -- copyFile (curDir </> "genCpp" </> "Main" </> "Main.cpp" )  (curDir </> "juce" </> "Source" </> "Main"</> "Main.cpp")
 
 
+  -- putStrLn $ show $ corefnJsonFileList
 
-
-
-
-  putStrLn $ show $ corefnJsonFileList
-
-  putStrLn "Press any key to continue..." >> getLine >> return ()
+  putStrLn "Press any key to continue..."  >> getLine >> return ()
 
 
 
