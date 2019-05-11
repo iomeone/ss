@@ -43,3 +43,12 @@ juce 's projucer  compiler flags
 juce's projucer link flags 
 1,vs
 /subsystem:console /entry:mainCRTStartup
+
+
+
+
+
+
+
+
+to see setup log , use -- stack build --dump-logs 

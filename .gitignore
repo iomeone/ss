@@ -1,5 +1,4 @@
 
-output/src/.vs/
-output/src/Debug/
-output/src/juce/Builds/VisualStudio2017/x64/
-output/src/juce/Builds/VisualStudio2017/.vs/
+compilerHelper/.stack-work/
+juce/Builds/VisualStudio2017/.vs/
+juce/Builds/VisualStudio2017/x64/

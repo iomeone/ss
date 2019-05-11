@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="g0Oue2" name="juceProject" projectType="guiapp" jucerVersion="5.4.2">
+  <MAINGROUP id="VObFrG" name="juceProject">
+    <GROUP id="{CA09F453-E908-2A0A-029D-75E61EAB4E41}" name="Source">
+      <GROUP id="{D05FCE44-2E71-E315-BA8F-9F8F11B5DA8B}" name="Control_Applicative">
+        <FILE id="MncTLD" name="Control_Applicative.cpp" compile="1" resource="0"
+              file="Source/Control_Applicative/Control_Applicative.cpp"/>
+        <FILE id="En9bnW" name="Control_Applicative.h" compile="0" resource="0"
+              file="Source/Control_Applicative/Control_Applicative.h"/>
+      </GROUP>
+      <GROUP id="{9CB3027B-588F-7FB7-9C4A-8AB7D7B84D8A}" name="Control_Apply">
+        <FILE id="H7HKgK" name="Control_Apply.cpp" compile="1" resource="0"
+              file="Source/Control_Apply/Control_Apply.cpp"/>
+        <FILE id="lS6WeL" name="Control_Apply.h" compile="0" resource="0" file="Source/Control_Apply/Control_Apply.h"/>
+      </GROUP>
+      <GROUP id="{9BC2504E-F318-83B7-662E-AA0411D6155E}" name="Control_Bind">
+        <FILE id="ipPg29" name="Control_Bind.cpp" compile="1" resource="0"
+              file="Source/Control_Bind/Control_Bind.cpp"/>
+        <FILE id="YGdyX4" name="Control_Bind.h" compile="0" resource="0" file="Source/Control_Bind/Control_Bind.h"/>
+      </GROUP>
+      <GROUP id="{8201E181-CDD7-9D8A-0E3A-69E8CFD635BB}" name="Control_Category">
+        <FILE id="dpcZql" name="Control_Category.cpp" compile="1" resource="0"
+              file="Source/Control_Category/Control_Category.cpp"/>
+        <FILE id="qZqAAf" name="Control_Category.h" compile="0" resource="0"
+              file="Source/Control_Category/Control_Category.h"/>
+      </GROUP>
+      <GROUP id="{843B08CE-8322-381A-E681-165F9370C1C8}" name="Control_Monad">
+        <FILE id="VyXGVr" name="Control_Monad.cpp" compile="1" resource="0"
+              file="Source/Control_Monad/Control_Monad.cpp"/>
+        <FILE id="lTbGyb" name="Control_Monad.h" compile="0" resource="0" file="Source/Control_Monad/Control_Monad.h"/>
+      </GROUP>
+      <GROUP id="{5EE0F5ED-9386-C582-2758-149C7F9C6F15}" name="Control_Semigroupoid">
+        <FILE id="AM5wpZ" name="Control_Semigroupoid.cpp" compile="1" resource="0"
+              file="Source/Control_Semigroupoid/Control_Semigroupoid.cpp"/>
+        <FILE id="ZkQMVj" name="Control_Semigroupoid.h" compile="0" resource="0"
+              file="Source/Control_Semigroupoid/Control_Semigroupoid.h"/>
+      </GROUP>
+      <GROUP id="{45B3870B-819E-B75B-5B1A-7B8D3F1CEFA6}" name="Data_Boolean">
+        <FILE id="YIKK80" name="Data_Boolean.cpp" compile="1" resource="0"
+              file="Source/Data_Boolean/Data_Boolean.cpp"/>
+        <FILE id="hHxveO" name="Data_Boolean.h" compile="0" resource="0" file="Source/Data_Boolean/Data_Boolean.h"/>
+      </GROUP>
+      <GROUP id="{4FC5F0D6-8A34-B121-21C2-EE43C53978AC}" name="Data_BooleanAlgebra">
+        <FILE id="rRkLrl" name="Data_BooleanAlgebra.cpp" compile="1" resource="0"
+              file="Source/Data_BooleanAlgebra/Data_BooleanAlgebra.cpp"/>
+        <FILE id="aUPaf5" name="Data_BooleanAlgebra.h" compile="0" resource="0"
+              file="Source/Data_BooleanAlgebra/Data_BooleanAlgebra.h"/>
+      </GROUP>
+      <GROUP id="{BE4C2E14-02C0-7060-0F9A-7F061B7A6AFE}" name="Data_Bounded">
+        <FILE id="jGAOZl" name="Data_Bounded.cpp" compile="1" resource="0"
+              file="Source/Data_Bounded/Data_Bounded.cpp"/>
+        <FILE id="JlsuEY" name="Data_Bounded.h" compile="0" resource="0" file="Source/Data_Bounded/Data_Bounded.h"/>
+      </GROUP>
+      <GROUP id="{7E1A06A7-BC93-CE0D-B468-381BA73BC788}" name="Data_CommutativeRing">
+        <FILE id="deAI6Z" name="Data_CommutativeRing.cpp" compile="1" resource="0"
+              file="Source/Data_CommutativeRing/Data_CommutativeRing.cpp"/>
+        <FILE id="uzh5Qq" name="Data_CommutativeRing.h" compile="0" resource="0"
+              file="Source/Data_CommutativeRing/Data_CommutativeRing.h"/>
+      </GROUP>
+      <GROUP id="{C4CE1FA7-C19D-6253-AD91-D876CCAC3710}" name="Data_DivisionRing">
+        <FILE id="h74wAj" name="Data_DivisionRing.cpp" compile="1" resource="0"
+              file="Source/Data_DivisionRing/Data_DivisionRing.cpp"/>
+        <FILE id="WghIKa" name="Data_DivisionRing.h" compile="0" resource="0"
+              file="Source/Data_DivisionRing/Data_DivisionRing.h"/>
+      </GROUP>
+      <GROUP id="{26455925-B89E-2C18-5360-F5B3C3844618}" name="Data_Eq">
+        <FILE id="Ubx35V" name="Data_Eq.cpp" compile="1" resource="0" file="Source/Data_Eq/Data_Eq.cpp"/>
+        <FILE id="pAu7U7" name="Data_Eq.h" compile="0" resource="0" file="Source/Data_Eq/Data_Eq.h"/>
+      </GROUP>
+      <GROUP id="{8C49F2EA-4992-E179-558E-C43E564050C7}" name="Data_EuclideanRing">
+        <FILE id="y1ZnCD" name="Data_EuclideanRing.cpp" compile="1" resource="0"
+              file="Source/Data_EuclideanRing/Data_EuclideanRing.cpp"/>
+        <FILE id="VUOq1E" name="Data_EuclideanRing.h" compile="0" resource="0"
+              file="Source/Data_EuclideanRing/Data_EuclideanRing.h"/>
+      </GROUP>
+      <GROUP id="{E1FAF355-A256-C640-B12F-F1FECBA72415}" name="Data_Field">
+        <FILE id="etKC6x" name="Data_Field.cpp" compile="1" resource="0" file="Source/Data_Field/Data_Field.cpp"/>
+        <FILE id="DPFhxZ" name="Data_Field.h" compile="0" resource="0" file="Source/Data_Field/Data_Field.h"/>
+      </GROUP>
+      <GROUP id="{A3E42E34-82D7-24F2-596A-8BA011A943C4}" name="Data_Function">
+        <FILE id="hNd5qo" name="Data_Function.cpp" compile="1" resource="0"
+              file="Source/Data_Function/Data_Function.cpp"/>
+        <FILE id="FwHpFg" name="Data_Function.h" compile="0" resource="0" file="Source/Data_Function/Data_Function.h"/>
+      </GROUP>
+      <GROUP id="{98FD7664-522F-D72C-137B-8E07E142EB1C}" name="Data_Functor">
+        <FILE id="jcrIjV" name="Data_Functor.cpp" compile="1" resource="0"
+              file="Source/Data_Functor/Data_Functor.cpp"/>
+        <FILE id="Y7TboB" name="Data_Functor.h" compile="0" resource="0" file="Source/Data_Functor/Data_Functor.h"/>
+      </GROUP>
+      <GROUP id="{922A52B6-AFC6-F734-342B-C9A2994B77EB}" name="Data_HeytingAlgebra">
+        <FILE id="UDEj2h" name="Data_HeytingAlgebra.cpp" compile="1" resource="0"
+              file="Source/Data_HeytingAlgebra/Data_HeytingAlgebra.cpp"/>
+        <FILE id="pd02o7" name="Data_HeytingAlgebra.h" compile="0" resource="0"
+              file="Source/Data_HeytingAlgebra/Data_HeytingAlgebra.h"/>
+      </GROUP>
+      <GROUP id="{65715D27-DE3A-6C4C-7A0E-64A7210480A2}" name="Data_Monoid">
+        <FILE id="lo8F7M" name="Data_Monoid.cpp" compile="1" resource="0" file="Source/Data_Monoid/Data_Monoid.cpp"/>
+        <FILE id="Wg06yT" name="Data_Monoid.h" compile="0" resource="0" file="Source/Data_Monoid/Data_Monoid.h"/>
+      </GROUP>
+      <GROUP id="{A3B11570-67ED-3A4B-7F60-0319D1AB596A}" name="Data_Monoid_Additive">
+        <FILE id="c0ugQs" name="Data_Monoid_Additive.cpp" compile="1" resource="0"
+              file="Source/Data_Monoid_Additive/Data_Monoid_Additive.cpp"/>
+        <FILE id="wJ73Np" name="Data_Monoid_Additive.h" compile="0" resource="0"
+              file="Source/Data_Monoid_Additive/Data_Monoid_Additive.h"/>
+      </GROUP>
+      <GROUP id="{04B1E610-87C5-ABC7-E485-22AB008558B8}" name="Data_Monoid_Conj">
+        <FILE id="bOLlm6" name="Data_Monoid_Conj.cpp" compile="1" resource="0"
+              file="Source/Data_Monoid_Conj/Data_Monoid_Conj.cpp"/>
+        <FILE id="jqweSe" name="Data_Monoid_Conj.h" compile="0" resource="0"
+              file="Source/Data_Monoid_Conj/Data_Monoid_Conj.h"/>
+      </GROUP>
+      <GROUP id="{0730FFAA-1011-7A00-6C88-BD6ECE83F9F9}" name="Data_Monoid_Disj">
+        <FILE id="NGP30h" name="Data_Monoid_Disj.cpp" compile="1" resource="0"
+              file="Source/Data_Monoid_Disj/Data_Monoid_Disj.cpp"/>
+        <FILE id="xlXilj" name="Data_Monoid_Disj.h" compile="0" resource="0"
+              file="Source/Data_Monoid_Disj/Data_Monoid_Disj.h"/>
+      </GROUP>
+      <GROUP id="{6FB97372-E295-6820-AB19-D755DEB8DAD4}" name="Data_Monoid_Dual">
+        <FILE id="nxEUr7" name="Data_Monoid_Dual.cpp" compile="1" resource="0"
+              file="Source/Data_Monoid_Dual/Data_Monoid_Dual.cpp"/>
+        <FILE id="nScG0g" name="Data_Monoid_Dual.h" compile="0" resource="0"
+              file="Source/Data_Monoid_Dual/Data_Monoid_Dual.h"/>
+      </GROUP>
+      <GROUP id="{114FF1F6-DC48-8073-ED6C-E912CA8D0F3B}" name="Data_Monoid_Endo">
+        <FILE id="BAg4fB" name="Data_Monoid_Endo.cpp" compile="1" resource="0"
+              file="Source/Data_Monoid_Endo/Data_Monoid_Endo.cpp"/>
+        <FILE id="aP0raL" name="Data_Monoid_Endo.h" compile="0" resource="0"
+              file="Source/Data_Monoid_Endo/Data_Monoid_Endo.h"/>
+      </GROUP>
+      <GROUP id="{BCFA4D5F-EBE9-66BA-565C-B534038952B1}" name="Data_Monoid_Multiplicative">
+        <FILE id="JWRP9v" name="Data_Monoid_Multiplicative.cpp" compile="1"
+              resource="0" file="Source/Data_Monoid_Multiplicative/Data_Monoid_Multiplicative.cpp"/>
+        <FILE id="OfUMHo" name="Data_Monoid_Multiplicative.h" compile="0" resource="0"
+              file="Source/Data_Monoid_Multiplicative/Data_Monoid_Multiplicative.h"/>
+      </GROUP>
+      <GROUP id="{68542BAE-7F2F-E3B0-B7AA-FD0B60095F2D}" name="Data_NaturalTransformation">
+        <FILE id="D6BGLh" name="Data_NaturalTransformation.cpp" compile="1"
+              resource="0" file="Source/Data_NaturalTransformation/Data_NaturalTransformation.cpp"/>
+        <FILE id="zwrUkr" name="Data_NaturalTransformation.h" compile="0" resource="0"
+              file="Source/Data_NaturalTransformation/Data_NaturalTransformation.h"/>
+      </GROUP>
+      <GROUP id="{DAB6A26F-678A-ACCB-A89A-F7C12F345A5C}" name="Data_Ord">
+        <FILE id="r2WENx" name="Data_Ord.cpp" compile="1" resource="0" file="Source/Data_Ord/Data_Ord.cpp"/>
+        <FILE id="yPnxYT" name="Data_Ord.h" compile="0" resource="0" file="Source/Data_Ord/Data_Ord.h"/>
+      </GROUP>
+      <GROUP id="{5D396136-073C-E2D0-3729-4033569FDDAB}" name="Data_Ord_Unsafe">
+        <FILE id="jC4fYO" name="Data_Ord_Unsafe.cpp" compile="1" resource="0"
+              file="Source/Data_Ord_Unsafe/Data_Ord_Unsafe.cpp"/>
+        <FILE id="DWDWnR" name="Data_Ord_Unsafe.h" compile="0" resource="0"
+              file="Source/Data_Ord_Unsafe/Data_Ord_Unsafe.h"/>
+      </GROUP>
+      <GROUP id="{B0CFFFE1-26B5-9197-5EAA-9F7599AFBEC3}" name="Data_Ordering">
+        <FILE id="JcLJmo" name="Data_Ordering.cpp" compile="1" resource="0"
+              file="Source/Data_Ordering/Data_Ordering.cpp"/>
+        <FILE id="H78M2t" name="Data_Ordering.h" compile="0" resource="0" file="Source/Data_Ordering/Data_Ordering.h"/>
+      </GROUP>
+      <GROUP id="{0CE64271-9437-735E-32D8-06646E84ADAB}" name="Data_Ring">
+        <FILE id="akobA0" name="Data_Ring.cpp" compile="1" resource="0" file="Source/Data_Ring/Data_Ring.cpp"/>
+        <FILE id="QyImcS" name="Data_Ring.h" compile="0" resource="0" file="Source/Data_Ring/Data_Ring.h"/>
+      </GROUP>
+      <GROUP id="{6BF9C0D2-6E31-280E-59ED-F9D30E1E507D}" name="Data_Semigroup">
+        <FILE id="hVgr1Q" name="Data_Semigroup.cpp" compile="1" resource="0"
+              file="Source/Data_Semigroup/Data_Semigroup.cpp"/>
+        <FILE id="qGKA7b" name="Data_Semigroup.h" compile="0" resource="0"
+              file="Source/Data_Semigroup/Data_Semigroup.h"/>
+      </GROUP>
+      <GROUP id="{1CD2D735-E200-CF9B-E2C2-A822A706ACB8}" name="Data_Semigroup_First">
+        <FILE id="tjaeHo" name="Data_Semigroup_First.cpp" compile="1" resource="0"
+              file="Source/Data_Semigroup_First/Data_Semigroup_First.cpp"/>
+        <FILE id="mvspiN" name="Data_Semigroup_First.h" compile="0" resource="0"
+              file="Source/Data_Semigroup_First/Data_Semigroup_First.h"/>
+      </GROUP>
+      <GROUP id="{6863F46A-2D4B-5A35-EF73-5D8FC6AC1430}" name="Data_Semigroup_Last">
+        <FILE id="O4pwnf" name="Data_Semigroup_Last.cpp" compile="1" resource="0"
+              file="Source/Data_Semigroup_Last/Data_Semigroup_Last.cpp"/>
+        <FILE id="lIgKCb" name="Data_Semigroup_Last.h" compile="0" resource="0"
+              file="Source/Data_Semigroup_Last/Data_Semigroup_Last.h"/>
+      </GROUP>
+      <GROUP id="{D58C5840-D4D1-B416-A0A3-DF25D462D1E4}" name="Data_Semiring">
+        <FILE id="V3rm0B" name="Data_Semiring.cpp" compile="1" resource="0"
+              file="Source/Data_Semiring/Data_Semiring.cpp"/>
+        <FILE id="i1k75a" name="Data_Semiring.h" compile="0" resource="0" file="Source/Data_Semiring/Data_Semiring.h"/>
+      </GROUP>
+      <GROUP id="{76C3A9A0-B8D1-39E6-5F36-C96542FBA6ED}" name="Data_Show">
+        <FILE id="qzJpJb" name="Data_Show.cpp" compile="1" resource="0" file="Source/Data_Show/Data_Show.cpp"/>
+        <FILE id="Slq6EQ" name="Data_Show.h" compile="0" resource="0" file="Source/Data_Show/Data_Show.h"/>
+      </GROUP>
+      <GROUP id="{8BE90E08-AB94-56F2-282B-DAC64B24626A}" name="Data_Symbol">
+        <FILE id="FwWvXs" name="Data_Symbol.cpp" compile="1" resource="0" file="Source/Data_Symbol/Data_Symbol.cpp"/>
+        <FILE id="SMYbcC" name="Data_Symbol.h" compile="0" resource="0" file="Source/Data_Symbol/Data_Symbol.h"/>
+      </GROUP>
+      <GROUP id="{7D5FD683-3D46-511D-98E1-E20A0028959A}" name="Data_Unit">
+        <FILE id="p4joZ1" name="Data_Unit.cpp" compile="1" resource="0" file="Source/Data_Unit/Data_Unit.cpp"/>
+        <FILE id="hAuq6B" name="Data_Unit.h" compile="0" resource="0" file="Source/Data_Unit/Data_Unit.h"/>
+      </GROUP>
+      <GROUP id="{B803FB9C-A2B6-A5F9-8754-4C878E079C14}" name="Data_Void">
+        <FILE id="dN4GAJ" name="Data_Void.cpp" compile="1" resource="0" file="Source/Data_Void/Data_Void.cpp"/>
+        <FILE id="V6qOR1" name="Data_Void.h" compile="0" resource="0" file="Source/Data_Void/Data_Void.h"/>
+      </GROUP>
+      <GROUP id="{CF645483-0777-1747-8D80-0A5B3B25BA8B}" name="Effect">
+        <FILE id="lRWKnI" name="Effect.cpp" compile="1" resource="0" file="Source/Effect/Effect.cpp"/>
+        <FILE id="ptcTAM" name="Effect.h" compile="0" resource="0" file="Source/Effect/Effect.h"/>
+      </GROUP>
+      <GROUP id="{CE709E4B-EFCA-635A-37ED-E6049C875BBE}" name="Effect_Class">
+        <FILE id="QAj4t0" name="Effect_Class.cpp" compile="1" resource="0"
+              file="Source/Effect_Class/Effect_Class.cpp"/>
+        <FILE id="dtQmK7" name="Effect_Class.h" compile="0" resource="0" file="Source/Effect_Class/Effect_Class.h"/>
+      </GROUP>
+      <GROUP id="{2C3E2382-8CBE-3F48-2804-D8B269B590CE}" name="Effect_Class_Console">
+        <FILE id="cECeU8" name="Effect_Class_Console.cpp" compile="1" resource="0"
+              file="Source/Effect_Class_Console/Effect_Class_Console.cpp"/>
+        <FILE id="is5RBm" name="Effect_Class_Console.h" compile="0" resource="0"
+              file="Source/Effect_Class_Console/Effect_Class_Console.h"/>
+      </GROUP>
+      <GROUP id="{F3C44EA5-37F0-961A-2F31-856303C2BD65}" name="Effect_Console">
+        <FILE id="pAdfp1" name="Effect_Console.cpp" compile="1" resource="0"
+              file="Source/Effect_Console/Effect_Console.cpp"/>
+        <FILE id="Xja2BT" name="Effect_Console.h" compile="0" resource="0"
+              file="Source/Effect_Console/Effect_Console.h"/>
+      </GROUP>
+      <GROUP id="{F0DF6694-B0C5-ED00-B712-4185057B4E32}" name="Effect_Uncurried">
+        <FILE id="iWnW3U" name="Effect_Uncurried.cpp" compile="1" resource="0"
+              file="Source/Effect_Uncurried/Effect_Uncurried.cpp"/>
+        <FILE id="fwV7KP" name="Effect_Uncurried.h" compile="0" resource="0"
+              file="Source/Effect_Uncurried/Effect_Uncurried.h"/>
+      </GROUP>
+      <GROUP id="{F3DE2E9D-A87D-6784-FEA9-335587E558EE}" name="Effect_Unsafe">
+        <FILE id="Vi7xOq" name="Effect_Unsafe.cpp" compile="1" resource="0"
+              file="Source/Effect_Unsafe/Effect_Unsafe.cpp"/>
+        <FILE id="UnghX7" name="Effect_Unsafe.h" compile="0" resource="0" file="Source/Effect_Unsafe/Effect_Unsafe.h"/>
+      </GROUP>
+      <GROUP id="{B61EE854-9BB2-6DE8-83D6-FC755E8741B8}" name="ffi">
+        <GROUP id="{641D5AE2-0510-24C2-08A3-D16885672736}" name="arrays">
+          <FILE id="fvs3Px" name="data-array.cpp" compile="1" resource="0" file="Source/ffi/arrays/data-array.cpp"/>
+        </GROUP>
+        <GROUP id="{6B1EA4B3-2ABC-B324-58DC-D58B4B25EC9B}" name="assert">
+          <FILE id="ewqQAs" name="test-assert.cpp" compile="1" resource="0" file="Source/ffi/assert/test-assert.cpp"/>
+        </GROUP>
+        <GROUP id="{C3A1EDF6-9172-BB41-E275-06A37233BB7E}" name="console">
+          <FILE id="x67T1C" name="effect-console.cpp" compile="1" resource="0"
+                file="Source/ffi/console/effect-console.cpp"/>
+        </GROUP>
+        <GROUP id="{E94849EC-1500-3F54-0747-DA717AF5C9A3}" name="effect">
+          <FILE id="e4tEFg" name="effect-uncurried.cpp" compile="1" resource="0"
+                file="Source/ffi/effect/effect-uncurried.cpp"/>
+          <FILE id="KTEUv5" name="effect.cpp" compile="1" resource="0" file="Source/ffi/effect/effect.cpp"/>
+        </GROUP>
+        <GROUP id="{C7B253E3-5A8D-3E2D-8254-E426B2A53E62}" name="foldable-traversable">
+          <FILE id="ehVRNg" name="data-foldable.cpp" compile="1" resource="0"
+                file="Source/ffi/foldable-traversable/data-foldable.cpp"/>
+          <FILE id="lq25p1" name="data-foldablewithindex.cpp" compile="1" resource="0"
+                file="Source/ffi/foldable-traversable/data-foldablewithindex.cpp"/>
+          <FILE id="D7y1SP" name="data-traversable.cpp" compile="1" resource="0"
+                file="Source/ffi/foldable-traversable/data-traversable.cpp"/>
+        </GROUP>
+        <GROUP id="{12250489-07BF-E151-97FA-B86D04513F03}" name="functions">
+          <FILE id="C1cOFF" name="data-functions-uncurried.cpp" compile="1" resource="0"
+                file="Source/ffi/functions/data-functions-uncurried.cpp"/>
+        </GROUP>
+        <GROUP id="{5B631993-5A68-F9AD-FC3E-C4B84C2C4560}" name="integers">
+          <FILE id="IRh8rB" name="data-int.cpp" compile="1" resource="0" file="Source/ffi/integers/data-int.cpp"/>
+        </GROUP>
+        <GROUP id="{8FD85598-6F28-5FDB-1915-7D00EA975A88}" name="math">
+          <FILE id="JdYqhC" name="math.cpp" compile="1" resource="0" file="Source/ffi/math/math.cpp"/>
+        </GROUP>
+        <GROUP id="{6DD0001D-6F6F-AAC0-234D-64E1164E9F22}" name="partial">
+          <FILE id="iXHl88" name="partial-unsafe.cpp" compile="1" resource="0"
+                file="Source/ffi/partial/partial-unsafe.cpp"/>
+        </GROUP>
+        <GROUP id="{560AA6DB-B574-E02D-0628-B5FC48819486}" name="prelude">
+          <FILE id="OdzdfW" name="control-apply.cpp" compile="1" resource="0"
+                file="Source/ffi/prelude/control-apply.cpp"/>
+          <FILE id="iIk6q1" name="data-bounded.cpp" compile="1" resource="0"
+                file="Source/ffi/prelude/data-bounded.cpp"/>
+          <FILE id="GoeAWG" name="data-eq.cpp" compile="1" resource="0" file="Source/ffi/prelude/data-eq.cpp"/>
+          <FILE id="zrStCp" name="data-euclideanring.cpp" compile="1" resource="0"
+                file="Source/ffi/prelude/data-euclideanring.cpp"/>
+          <FILE id="mVuskK" name="data-functor.cpp" compile="1" resource="0"
+                file="Source/ffi/prelude/data-functor.cpp"/>
+          <FILE id="QJ2HNj" name="data-heytingalgebra.cpp" compile="1" resource="0"
+                file="Source/ffi/prelude/data-heytingalgebra.cpp"/>
+          <FILE id="QwuT0u" name="data-ord.cpp" compile="1" resource="0" file="Source/ffi/prelude/data-ord.cpp"/>
+          <FILE id="ZDIz8X" name="data-ring.cpp" compile="1" resource="0" file="Source/ffi/prelude/data-ring.cpp"/>
+          <FILE id="nZkEp3" name="data-semigroup.cpp" compile="1" resource="0"
+                file="Source/ffi/prelude/data-semigroup.cpp"/>
+          <FILE id="MuODGj" name="data-semiring.cpp" compile="1" resource="0"
+                file="Source/ffi/prelude/data-semiring.cpp"/>
+          <FILE id="HsutCk" name="data-show.cpp" compile="1" resource="0" file="Source/ffi/prelude/data-show.cpp"/>
+          <FILE id="kUDck3" name="data-unit.cpp" compile="1" resource="0" file="Source/ffi/prelude/data-unit.cpp"/>
+        </GROUP>
+        <GROUP id="{E9331D47-F86C-3F51-FC17-60F31940F03A}" name="refs">
+          <FILE id="evw7x7" name="effect-ref.cpp" compile="1" resource="0" file="Source/ffi/refs/effect-ref.cpp"/>
+        </GROUP>
+        <GROUP id="{F3F20CA5-01AC-CFFB-7DF5-E67C3517EF03}" name="st">
+          <FILE id="UQB2wO" name="control-monad-st-internal.cpp" compile="1"
+                resource="0" file="Source/ffi/st/control-monad-st-internal.cpp"/>
+        </GROUP>
+        <GROUP id="{EAA6369A-C1F1-E646-1FB3-C505F765569A}" name="unsafe_coerce">
+          <FILE id="SLIz7J" name="unsafe-coerce.cpp" compile="1" resource="0"
+                file="Source/ffi/unsafe_coerce/unsafe-coerce.cpp"/>
+        </GROUP>
+        <FILE id="TB6mZX" name="LICENSE" compile="0" resource="1" file="Source/ffi/LICENSE"/>
+        <FILE id="MseUfC" name="README.md" compile="0" resource="1" file="Source/ffi/README.md"/>
+      </GROUP>
+      <GROUP id="{3D1E0552-BACE-90C1-6372-D40B98B55F4F}" name="Main">
+        <FILE id="RYKqYM" name="Main.cpp" compile="1" resource="0" file="Source/Main/Main.cpp"/>
+        <FILE id="HfOnKX" name="Main.h" compile="0" resource="0" file="Source/Main/Main.h"/>
+      </GROUP>
+      <GROUP id="{6D51E876-F261-8A32-858A-93EB5E913899}" name="Prelude">
+        <FILE id="uhutAY" name="Prelude.cpp" compile="1" resource="0" file="Source/Prelude/Prelude.cpp"/>
+        <FILE id="qWqWBT" name="Prelude.h" compile="0" resource="0" file="Source/Prelude/Prelude.h"/>
+      </GROUP>
+      <GROUP id="{CE5AAC4F-D65E-FB0F-8854-C38EC4A8A89F}" name="Record_Unsafe">
+        <FILE id="x5yAxm" name="Record_Unsafe.cpp" compile="1" resource="0"
+              file="Source/Record_Unsafe/Record_Unsafe.cpp"/>
+        <FILE id="Xwjpd9" name="Record_Unsafe.h" compile="0" resource="0" file="Source/Record_Unsafe/Record_Unsafe.h"/>
+      </GROUP>
+      <GROUP id="{14218590-C2C1-A21A-44DF-CB3322D059A0}" name="Type_Data_Row">
+        <FILE id="EFgQB7" name="Type_Data_Row.cpp" compile="1" resource="0"
+              file="Source/Type_Data_Row/Type_Data_Row.cpp"/>
+        <FILE id="l0QrAg" name="Type_Data_Row.h" compile="0" resource="0" file="Source/Type_Data_Row/Type_Data_Row.h"/>
+      </GROUP>
+      <GROUP id="{5EDD351B-AFBD-82BF-C26B-9E0492748337}" name="Type_Data_RowList">
+        <FILE id="dFlVlH" name="Type_Data_RowList.cpp" compile="1" resource="0"
+              file="Source/Type_Data_RowList/Type_Data_RowList.cpp"/>
+        <FILE id="M1wZIl" name="Type_Data_RowList.h" compile="0" resource="0"
+              file="Source/Type_Data_RowList/Type_Data_RowList.h"/>
+      </GROUP>
+      <FILE id="YRc5mp" name="dictionary.h" compile="0" resource="0" file="Source/dictionary.h"/>
+      <FILE id="nWdi6M" name="functions.h" compile="0" resource="0" file="Source/functions.h"/>
+      <FILE id="oufA00" name="purescript.cpp" compile="1" resource="0" file="Source/purescript.cpp"/>
+      <FILE id="c0lrU0" name="purescript.h" compile="0" resource="0" file="Source/purescript.h"/>
+      <FILE id="ScXAPU" name="recursion.h" compile="0" resource="0" file="Source/recursion.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <VS2017 targetFolder="Builds/VisualStudio2017" extraCompilerFlags="/I&quot;./../../source&quot;"
+            extraLinkerFlags="/subsystem:console /entry:mainCRTStartup">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../../../../../s/thirdParty/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../../../../s/thirdParty/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../../../../s/thirdParty/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../../../../s/thirdParty/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../../../../s/thirdParty/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../../../../../s/thirdParty/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../../../s/thirdParty/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../../../../s/thirdParty/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../../../../s/thirdParty/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../../../../s/thirdParty/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../../../../s/thirdParty/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../../../../../s/thirdParty/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2017>
+    <XCODE_MAC targetFolder="Builds/MacOSX" extraCompilerFlags="-I../../source">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_opengl"/>
+        <MODULEPATH id="juce_gui_extra"/>
+        <MODULEPATH id="juce_gui_basics"/>
+        <MODULEPATH id="juce_graphics"/>
+        <MODULEPATH id="juce_events"/>
+        <MODULEPATH id="juce_data_structures"/>
+        <MODULEPATH id="juce_cryptography"/>
+        <MODULEPATH id="juce_core"/>
+        <MODULEPATH id="juce_audio_processors"/>
+        <MODULEPATH id="juce_audio_formats"/>
+        <MODULEPATH id="juce_audio_devices"/>
+        <MODULEPATH id="juce_audio_basics"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <WINDOWS/>
+  </LIVE_SETTINGS>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+</JUCERPROJECT>
