@@ -35,8 +35,8 @@ output file ->$(IntDir)/%(RelativeDir)/
 
 
 juce 's projucer  compiler flags
-1,vs include 
-/I"./../../glm" /wd"4201"
+1,vs include   -> /I"./../../source"   /Zm100 
+/I"./../../glm" /wd"4201"  
 2,mac os include 
 -I../../glm
 

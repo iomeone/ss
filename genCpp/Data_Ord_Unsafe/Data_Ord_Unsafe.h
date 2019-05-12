@@ -9,7 +9,7 @@ namespace Data_Ord_Unsafe {
 
 using namespace purescript;
 
-auto unsafeCompare() -> boxed;
+auto unsafeCompare() -> const boxed&;
 auto unsafeCompareImpl() -> const boxed&;
 
 } // end namespace Data_Ord_Unsafe

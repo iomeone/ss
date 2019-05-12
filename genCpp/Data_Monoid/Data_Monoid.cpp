@@ -137,7 +137,7 @@ auto power() -> const boxed& {
                     boxed x_Prime_ = go(Data_EuclideanRing::div()(Data_EuclideanRing::euclideanRingInt())(p)(2));
                     return Data_Semigroup::append()(dictMonoid["Semigroup0"](undefined))(x_Prime_)(Data_Semigroup::append()(dictMonoid["Semigroup0"](undefined))(x_Prime_)(x));
                 };
-                THROW_("PatternMatchFailure: ""Failed pattern match at Data.Monoid (line 66, column 3 - line 66, column 17): ");
+                THROW_("PatternMatchFailure: ""Failed pattern match at Data.Monoid (line 65, column 3 - line 65, column 17): ");
             };
             return go;
         };
@@ -154,7 +154,7 @@ auto guard() -> const boxed& {
                 if (!(unbox<bool>(v))) {
                     return Data_Monoid::mempty()(dictMonoid);
                 };
-                THROW_("PatternMatchFailure: ""Failed pattern match at Data.Monoid (line 74, column 1 - line 74, column 49): ");
+                THROW_("PatternMatchFailure: ""Failed pattern match at Data.Monoid (line 73, column 1 - line 73, column 49): ");
             };
         };
     };

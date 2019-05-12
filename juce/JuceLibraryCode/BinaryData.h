@@ -11,11 +11,14 @@ namespace BinaryData
     extern const char*   LICENSE;
     const int            LICENSESize = 1071;
 
+    extern const char*   purescriptnativeffimasterex_7z;
+    const int            purescriptnativeffimasterex_7zSize = 167;
+
     extern const char*   README_md;
     const int            README_mdSize = 306;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 2;
+    const int namedResourceListSize = 3;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

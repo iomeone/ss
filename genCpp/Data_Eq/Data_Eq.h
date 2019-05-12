@@ -29,7 +29,11 @@ auto eq1Array() -> boxed;
 auto eqRowCons() -> const boxed&;
 auto notEq() -> const boxed&;
 auto notEq1() -> const boxed&;
-auto refEq() -> const boxed&;
+auto eqBooleanImpl() -> const boxed&;
+auto eqIntImpl() -> const boxed&;
+auto eqNumberImpl() -> const boxed&;
+auto eqCharImpl() -> const boxed&;
+auto eqStringImpl() -> const boxed&;
 auto eqArrayImpl() -> const boxed&;
 
 } // end namespace Data_Eq

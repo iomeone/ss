@@ -1,5 +1,4 @@
 #include "Data_Eq/Data_Eq.h"
-#include "Data_Ord_Unsafe/Data_Ord_Unsafe.h"
 #include "Data_Ordering/Data_Ordering.h"
 #include "Data_Ring/Data_Ring.h"
 #include "Data_Semiring/Data_Semiring.h"
@@ -68,7 +67,7 @@ auto ordUnit() -> boxed {
 auto ordString() -> boxed {
     return Data_Ord::Ord()([=](const boxed&) -> boxed {
         return Data_Eq::eqString();
-    })(Data_Ord_Unsafe::unsafeCompare());
+    })(Data_Ord::ordStringImpl()(Data_Ordering::LT())(Data_Ordering::EQ())(Data_Ordering::GT()));
 };
 auto ordRecordNil() -> boxed {
     return Data_Ord::OrdRecord()([=](const boxed&) -> boxed {
@@ -117,29 +116,29 @@ auto ordOrdering() -> boxed {
             if (unbox<dict_t>(v).contains("GT")) {
                 return Data_Ordering::GT();
             };
-            THROW_("PatternMatchFailure: ""Failed pattern match at Data.Ord (line 73, column 1 - line 73, column 37): ");
+            THROW_("PatternMatchFailure: ""Failed pattern match at Data.Ord (line 112, column 1 - line 112, column 37): ");
         };
     });
 };
 auto ordNumber() -> boxed {
     return Data_Ord::Ord()([=](const boxed&) -> boxed {
         return Data_Eq::eqNumber();
-    })(Data_Ord_Unsafe::unsafeCompare());
+    })(Data_Ord::ordNumberImpl()(Data_Ordering::LT())(Data_Ordering::EQ())(Data_Ordering::GT()));
 };
 auto ordInt() -> boxed {
     return Data_Ord::Ord()([=](const boxed&) -> boxed {
         return Data_Eq::eqInt();
-    })(Data_Ord_Unsafe::unsafeCompare());
+    })(Data_Ord::ordIntImpl()(Data_Ordering::LT())(Data_Ordering::EQ())(Data_Ordering::GT()));
 };
 auto ordChar() -> boxed {
     return Data_Ord::Ord()([=](const boxed&) -> boxed {
         return Data_Eq::eqChar();
-    })(Data_Ord_Unsafe::unsafeCompare());
+    })(Data_Ord::ordCharImpl()(Data_Ordering::LT())(Data_Ordering::EQ())(Data_Ordering::GT()));
 };
 auto ordBoolean() -> boxed {
     return Data_Ord::Ord()([=](const boxed&) -> boxed {
         return Data_Eq::eqBoolean();
-    })(Data_Ord_Unsafe::unsafeCompare());
+    })(Data_Ord::ordBooleanImpl()(Data_Ordering::LT())(Data_Ordering::EQ())(Data_Ordering::GT()));
 };
 auto compareRecord() -> const boxed& {
     static const boxed _ = [](const boxed& dict) -> boxed {
@@ -265,7 +264,7 @@ auto max() -> const boxed& {
                 if (unbox<dict_t>(v).contains("GT")) {
                     return x;
                 };
-                THROW_("PatternMatchFailure: ""Failed pattern match at Data.Ord (line 128, column 3 - line 131, column 12): ");
+                THROW_("PatternMatchFailure: ""Failed pattern match at Data.Ord (line 167, column 3 - line 170, column 12): ");
             };
         };
     };
@@ -285,7 +284,7 @@ auto min() -> const boxed& {
                 if (unbox<dict_t>(v).contains("GT")) {
                     return y;
                 };
-                THROW_("PatternMatchFailure: ""Failed pattern match at Data.Ord (line 119, column 3 - line 122, column 12): ");
+                THROW_("PatternMatchFailure: ""Failed pattern match at Data.Ord (line 158, column 3 - line 161, column 12): ");
             };
         };
     };
@@ -308,7 +307,7 @@ auto ordArray() -> const boxed& {
                     if (unbox<dict_t>(v).contains("GT")) {
                         return -1;
                     };
-                    THROW_("PatternMatchFailure: ""Failed pattern match at Data.Ord (line 66, column 7 - line 71, column 1): ");
+                    THROW_("PatternMatchFailure: ""Failed pattern match at Data.Ord (line 65, column 7 - line 70, column 1): ");
                 };
             };
             return [=](const boxed& xs) -> boxed {
@@ -403,6 +402,11 @@ auto abs() -> const boxed& {
 
 DEFINE_FOREIGN_DICTIONARY_AND_ACCESSOR()
 
+auto ordBooleanImpl() -> const boxed& { static const boxed _ = foreign().at("ordBooleanImpl"); return _; };
+auto ordIntImpl() -> const boxed& { static const boxed _ = foreign().at("ordIntImpl"); return _; };
+auto ordNumberImpl() -> const boxed& { static const boxed _ = foreign().at("ordNumberImpl"); return _; };
+auto ordStringImpl() -> const boxed& { static const boxed _ = foreign().at("ordStringImpl"); return _; };
+auto ordCharImpl() -> const boxed& { static const boxed _ = foreign().at("ordCharImpl"); return _; };
 auto ordArrayImpl() -> const boxed& { static const boxed _ = foreign().at("ordArrayImpl"); return _; };
 
 } // end namespace Data_Ord

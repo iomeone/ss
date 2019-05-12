@@ -49,7 +49,7 @@ auto eqUnit() -> boxed {
     });
 };
 auto eqString() -> boxed {
-    return Data_Eq::Eq()(Data_Eq::refEq());
+    return Data_Eq::Eq()(Data_Eq::eqStringImpl());
 };
 auto eqRowNil() -> boxed {
     return Data_Eq::EqRecord()([=](const boxed& v) -> boxed {
@@ -75,16 +75,16 @@ auto eqRec() -> const boxed& {
     return _;
 };
 auto eqNumber() -> boxed {
-    return Data_Eq::Eq()(Data_Eq::refEq());
+    return Data_Eq::Eq()(Data_Eq::eqNumberImpl());
 };
 auto eqInt() -> boxed {
-    return Data_Eq::Eq()(Data_Eq::refEq());
+    return Data_Eq::Eq()(Data_Eq::eqIntImpl());
 };
 auto eqChar() -> boxed {
-    return Data_Eq::Eq()(Data_Eq::refEq());
+    return Data_Eq::Eq()(Data_Eq::eqCharImpl());
 };
 auto eqBoolean() -> boxed {
-    return Data_Eq::Eq()(Data_Eq::refEq());
+    return Data_Eq::Eq()(Data_Eq::eqBooleanImpl());
 };
 auto eq1() -> const boxed& {
     static const boxed _ = [](const boxed& dict) -> boxed {
@@ -158,7 +158,11 @@ auto notEq1() -> const boxed& {
 
 DEFINE_FOREIGN_DICTIONARY_AND_ACCESSOR()
 
-auto refEq() -> const boxed& { static const boxed _ = foreign().at("refEq"); return _; };
+auto eqBooleanImpl() -> const boxed& { static const boxed _ = foreign().at("eqBooleanImpl"); return _; };
+auto eqIntImpl() -> const boxed& { static const boxed _ = foreign().at("eqIntImpl"); return _; };
+auto eqNumberImpl() -> const boxed& { static const boxed _ = foreign().at("eqNumberImpl"); return _; };
+auto eqCharImpl() -> const boxed& { static const boxed _ = foreign().at("eqCharImpl"); return _; };
+auto eqStringImpl() -> const boxed& { static const boxed _ = foreign().at("eqStringImpl"); return _; };
 auto eqArrayImpl() -> const boxed& { static const boxed _ = foreign().at("eqArrayImpl"); return _; };
 
 } // end namespace Data_Eq

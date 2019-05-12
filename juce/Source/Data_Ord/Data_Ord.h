@@ -39,6 +39,11 @@ auto ordRecordCons() -> const boxed&;
 auto clamp() -> const boxed&;
 auto between() -> const boxed&;
 auto abs() -> const boxed&;
+auto ordBooleanImpl() -> const boxed&;
+auto ordIntImpl() -> const boxed&;
+auto ordNumberImpl() -> const boxed&;
+auto ordStringImpl() -> const boxed&;
+auto ordCharImpl() -> const boxed&;
 auto ordArrayImpl() -> const boxed&;
 
 } // end namespace Data_Ord

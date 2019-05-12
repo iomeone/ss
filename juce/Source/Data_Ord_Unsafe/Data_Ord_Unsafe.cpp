@@ -5,8 +5,11 @@
 
 namespace Data_Ord_Unsafe {
 
-auto unsafeCompare() -> boxed {
-    return Data_Ord_Unsafe::unsafeCompareImpl()(Data_Ordering::LT())(Data_Ordering::EQ())(Data_Ordering::GT());
+auto unsafeCompare() -> const boxed& {
+    static const boxed _ = [](const boxed& dictWarn) -> boxed {
+        return Data_Ord_Unsafe::unsafeCompareImpl()(Data_Ordering::LT())(Data_Ordering::EQ())(Data_Ordering::GT());
+    };
+    return _;
 };
 
 

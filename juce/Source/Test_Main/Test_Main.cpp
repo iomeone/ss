@@ -21,10 +21,10 @@
 namespace Test_Main {
 
 auto plusInfinity() -> boxed {
-    return 1.0 / 0.0;
+    return 1.0 / 1.0;
 };
 auto nan() -> boxed {
-    return 0.0 / 0.0;
+    return 0.0 / 1.0;
 };
 auto minusInfinity() -> boxed {
     return unbox<double>(-1.0) / 0.0;

@@ -32,7 +32,7 @@ getDirTreeList (x@(Dir name contents) : xs) ext=
   getDirTreeList contents ext ++ getDirTreeList xs ext
 
 getDirTreeList (x@(File name file) : xs) ext = 
-  if takeExtension file == ext && takeFileName file /= "externs.json"
+  if takeExtension file == ext && takeFileName file /= "externs.json" && isInfixOf "Test"  file /= True  && isInfixOf "test" file /= True  && isInfixOf "bench" file /= True 
     then file : getDirTreeList xs ext
     else getDirTreeList xs ext
   
