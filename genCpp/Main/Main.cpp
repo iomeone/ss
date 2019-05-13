@@ -5,6 +5,7 @@
 #include "Data_Either/Data_Either.h"
 #include "Data_Eq/Data_Eq.h"
 #include "Data_Function/Data_Function.h"
+#include "Data_Functor/Data_Functor.h"
 #include "Data_Identity/Data_Identity.h"
 #include "Data_List/Data_List.h"
 #include "Data_Maybe/Data_Maybe.h"
@@ -50,7 +51,7 @@ auto parseTest() -> const boxed& {
                     if (unbox<dict_t>(v).contains("Left")) {
                         return Effect_Console::logShow()(Data_Show::showString())(Data_Semigroup::append()(Data_Semigroup::semigroupString())("error: ")(Data_Show::show()(Text_Parsing_Parser::showParseError())(v["value0"])));
                     };
-                    THROW_("PatternMatchFailure: ""Failed pattern match at Main (line 35, column 21 - line 38, column 46): ");
+                    THROW_("PatternMatchFailure: ""Failed pattern match at Main (line 39, column 21 - line 42, column 46): ");
                 };
             };
         };
@@ -63,10 +64,13 @@ auto parens() -> const boxed& {
     };
     return _;
 };
+auto opTest() -> boxed {
+    return Text_Parsing_Parser_Combinators::chainl()(Data_Identity::monadIdentity())(Data_Functor::map()(Text_Parsing_Parser::functorParserT()(Data_Identity::functorIdentity()))(Data_String_CodeUnits::singleton())(Text_Parsing_Parser_String::anyChar()(Text_Parsing_Parser_String::stringLikeString())(Data_Identity::monadIdentity())))(Data_Functor::voidLeft()(Text_Parsing_Parser::functorParserT()(Data_Identity::functorIdentity()))(Text_Parsing_Parser_String::_char_()(Text_Parsing_Parser_String::stringLikeString())(Data_Identity::monadIdentity())("+"))(Data_Semigroup::append()(Data_Semigroup::semigroupString())))("");
+};
 auto main() -> const boxed& {
     static const boxed _ = []() -> boxed {
-        Effect_Console::log()("parser parens:")();
-        return Main::parseTest()(Data_Show::showString())(Data_Eq::eqString())("1(haha)")(Main::s1()(Text_Parsing_Parser_String::stringLikeString())(Data_Identity::monadIdentity()))();
+        Effect_Console::log()("parser test:")();
+        return Main::parseTest()(Data_Show::showString())(Data_Eq::eqString())("12")(Main::opTest())();
     };
     return _;
 };

@@ -25,6 +25,42 @@ exports["replace"] = [](const boxed& s1) -> boxed {
   };
 };
 
+
+//	split::Pattern->String->Array String
+
+exports["split"] = [](const boxed& p_) -> boxed {
+	return [=](const boxed& src_) -> boxed {
+		const string& p = unbox<string>(p_);
+		const string& s = unbox<string>(src_);
+
+		size_t pos_start = 0, pos_end, delim_len = p.length();
+		string token;
+		array_t res;
+		if (p.length() == 0 || s.length() == 0)
+		{
+			res.push_back(boxed(s));
+			return res;
+		}
+
+		if (p.length() > 0 && s.length() > 0)
+		{
+			while ((pos_end = s.find(p, pos_start)) != string::npos) {
+				token = s.substr(pos_start, pos_end - pos_start);
+				pos_start = pos_end + delim_len;
+				res.push_back(boxed(token));
+			}
+
+			res.push_back(boxed(s.substr(pos_start)));
+		}
+		return res;
+
+	};
+};
+
+
+
+
+
 FOREIGN_END
 
 FOREIGN_BEGIN( Data_String_CodeUnits )
@@ -153,10 +189,11 @@ exports["_unsafeCodePointAt0"] = [](const boxed& fallBack) -> boxed {
 		if (s.length() < 1)
 		{
 			return fallBack(str);
+			//return fallBack(); this code also compile, which one I should use??
 		}
 		else
 		{
-			return s[0];
+			return s[0]; // the code is wrong , bcz chinese character takes 2 or more byte. 
 		}
 	};
 
@@ -174,23 +211,37 @@ exports["_toCodePointArray"] = [](const boxed& fallBack) -> boxed{
 			const string& s = unbox<string>(str);
 			if (s.length() < 1)
 			{
-				return fallBack();
+				//printf("fall back\n");
+				return fallBack(str);
 			}
 			else
 			{
 				array_t result;
 			
 				for (char c : s) {
-					result.emplace(boxed(int(c)));
+					result.push_back(boxed(c));
 				}
 				return result;
 			}
 		};
 	};
 
-
 };
 
+
+// -- Returns the first `n` characters of the string.
+// foreign import take :: Int -> String -> String
+exports["_take"] = [](const boxed& fallBack) -> boxed {
+	return [=](const boxed& n_) -> boxed {
+		return [=](const boxed& s_) -> boxed {
+			const string& s = unbox<string>(s_);
+			auto n = std::max(unbox<int>(n_), 0);
+			auto l = s.size();
+			return n >= l ? s : (n < 1 ? string("") : s.substr(0, n)); // the code is wrong , bcz chinese character takes 2 or more byte. 
+		};
+	};
+
+};
 
 
 

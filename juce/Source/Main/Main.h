@@ -12,6 +12,7 @@ using namespace purescript;
 auto s1() -> const boxed&;
 auto parseTest() -> const boxed&;
 auto parens() -> const boxed&;
+auto opTest() -> boxed;
 auto main() -> const boxed&;
 auto factorial() -> const boxed&;
 

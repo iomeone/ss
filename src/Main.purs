@@ -31,6 +31,10 @@ parens = between (string "(") (string ")")
 
 s1 = string "1"
 
+opTest :: Parser String String
+opTest = chainl (singleton <$> anyChar) (char '+' $> append) ""
+
+
 parseTest :: forall s a. Show a => Eq a => s  -> Parser s a -> Effect Unit
 parseTest input p = case runParser input p of
   Right actual -> do
@@ -39,12 +43,13 @@ parseTest input p = case runParser input p of
 
 
 
+main :: Effect Unit
 main = do
 --  log $ show (factorial 3)
-  log  "parser parens:"
+  log  "parser test:"
 
 
-  parseTest "1(haha)" s1 
+  parseTest "a+b+c" opTest 
 
 
 
