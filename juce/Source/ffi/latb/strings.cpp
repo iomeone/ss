@@ -161,5 +161,40 @@ exports["_unsafeCodePointAt0"] = [](const boxed& fallBack) -> boxed {
 	};
 
 };
+
+
+
+
+exports["_toCodePointArray"] = [](const boxed& fallBack) -> boxed{
+
+	return [=](const boxed & unsafeCodePointAt0) -> boxed {
+
+		return [=](const boxed & str) -> boxed {
+
+			const string& s = unbox<string>(str);
+			if (s.length() < 1)
+			{
+				return fallBack();
+			}
+			else
+			{
+				array_t result;
+			
+				for (char c : s) {
+					result.emplace(boxed(int(c)));
+				}
+				return result;
+			}
+		};
+	};
+
+
+};
+
+
+
+
+
+
 FOREIGN_END
 
