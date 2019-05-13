@@ -31,13 +31,13 @@ FOREIGN_BEGIN( Data_String_CodeUnits )
 
 
 // foreign import length :: String -> Int
-//
-//exports["length"] = [](const boxed& s_) -> boxed {
-//  const string& s = unbox<string>(s_);
-//  const auto sz = s.size();
-//  assert(sz <= std::numeric_limits<int>::max());
-//  return sz;
-//};
+
+exports["length"] = [](const boxed& s_) -> boxed {
+  const string& s = unbox<string>(s_);
+  const int sz = s.size();
+  assert(sz <= std::numeric_limits<int>::max());
+  return sz;
+};
 
 // foreign import singleton :: Char -> String
 //
@@ -88,14 +88,14 @@ exports["take"] = [](const boxed& n_) -> boxed {
   };
 };
 
-//exports["countPrefix"] = [](const boxed& f_) -> boxed {
-//  return [=](const boxed& s_) -> boxed {
-//    const string& s = unbox<string>(s_);
-//    size_t i = 0;
-//    while ( i<s.length() && unbox<bool>(f_(boxed(s.substr(i, 1)))) ) i++;
-//    return i;
-//  };
-//};
+exports["countPrefix"] = [](const boxed& f_) -> boxed {
+  return [=](const boxed& s_) -> boxed {
+    const string& s = unbox<string>(s_);
+    int i = 0;
+    while ( i<s.length() && unbox<bool>(f_(boxed(s.substr(i, 1)))) ) i++;
+    return i;
+  };
+};
 
 // foreign import _indexOf :: (forall a. a -> Maybe a) -> (forall a. Maybe a) -> Pattern -> String -> Maybe Int
 //
@@ -116,6 +116,11 @@ exports["_indexOf"] = [](const boxed& just_) -> boxed {
     };
   };
 };
+
+
+
+
+
 /*   const char * p = purs_any_get_string(p0); */
 /*   const char * s = purs_any_get_string(s0); */
 /*   const char * found = strstr(s, p); */
@@ -123,3 +128,38 @@ exports["_indexOf"] = [](const boxed& just_) -> boxed {
 /*   return purs_any_app(just, purs_any_int_new(found-s)); */
 
 FOREIGN_END
+
+
+
+
+
+
+
+
+
+
+
+
+FOREIGN_BEGIN(Data_String_CodePoints)
+//foreign import _unsafeCodePointAt0
+//:: (String->CodePoint)
+//->String
+//->CodePoint
+
+exports["_unsafeCodePointAt0"] = [](const boxed& fallBack) -> boxed {
+
+	return [=](const boxed & str) -> boxed {
+		const string& s = unbox<string>(str);
+		if (s.length() < 1)
+		{
+			return fallBack(str);
+		}
+		else
+		{
+			return s[0];
+		}
+	};
+
+};
+FOREIGN_END
+

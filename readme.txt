@@ -52,3 +52,6 @@ juce's projucer link flags
 
 
 to see setup log , use -- stack build --dump-logs 
+
+
+#pragma execution_character_set("utf-8")

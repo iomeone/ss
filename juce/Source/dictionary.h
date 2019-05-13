@@ -51,7 +51,7 @@ namespace purescript {
           if (elem_key == key || !std::strcmp(elem_key, key)) {
             return it->second;
           }
-        }
+        }		throw std::runtime_error("dictionary key \"" + std::string(key) + "\" not found");
 #if !defined(NDEBUG) && !defined(PURESCRIPT_DISABLE_EXCEPTIONS)
         throw std::runtime_error("dictionary key \"" + std::string(key) + "\" not found");
 #endif
