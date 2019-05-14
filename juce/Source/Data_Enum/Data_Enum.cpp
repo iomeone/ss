@@ -522,7 +522,7 @@ auto boundedEnumChar() -> boxed {
         return Data_Bounded::boundedChar();
     })([=](const boxed&) -> boxed {
         return Data_Enum::enumChar();
-    })(unbox<int>(Data_Enum::toCharCode()(Data_Bounded::top()(Data_Bounded::boundedChar()))) - unbox<int>(Data_Enum::toCharCode()(Data_Bounded::bottom()(Data_Bounded::boundedChar()))))(Data_Enum::toCharCode())(Data_Enum::charToEnum());
+    })(unbox<int>(Data_Enum::toCharCode()(Data_Bounded::top()(Data_Bounded::boundedChar() ) ) ) - unbox<int>(Data_Enum::toCharCode()(Data_Bounded::bottom()(Data_Bounded::boundedChar()))))(Data_Enum::toCharCode())(Data_Enum::charToEnum());
 };
 auto boundedEnumBoolean() -> boxed {
     return Data_Enum::BoundedEnum()([=](const boxed&) -> boxed {

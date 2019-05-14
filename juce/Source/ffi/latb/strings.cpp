@@ -36,7 +36,12 @@ exports["split"] = [](const boxed& p_) -> boxed {
 		size_t pos_start = 0, pos_end, delim_len = p.length();
 		string token;
 		array_t res;
-		if (p.length() == 0 || s.length() == 0)
+		if ( s.length() == 0)
+		{
+			return res;
+		}
+
+		if (p.length() == 0 )
 		{
 			res.push_back(boxed(s));
 			return res;
@@ -243,9 +248,33 @@ exports["_take"] = [](const boxed& fallBack) -> boxed {
 
 };
 
+FOREIGN_END
 
 
+
+
+
+
+
+
+FOREIGN_BEGIN(Data_String_Unsafe)
+
+
+//-- | Returns the character at the given index.
+//-- |
+//-- | **Unsafe:** throws runtime exception if the index is out of bounds.
+//foreign import charAt::Int->String->Char
+
+
+exports["charAt"] = [](const boxed& index_) -> boxed {
+	return [=](const boxed& str_) -> boxed {
+		const string& str = unbox<string>(str_);
+		const int &  index = unbox<int>(index_);
+
+		assert(str.length() >index && index >= 0);
+		return str.substr(index, 1);;
+	};
+};
 
 
 FOREIGN_END
-
