@@ -8,21 +8,21 @@ FOREIGN_BEGIN( Data_Bounded )
 exports["topInt"] = std::numeric_limits<int>::max();
 exports["bottomInt"] = std::numeric_limits<int>::min();
 
-//exports["topChar"] = 0x10FFFF; // unicode limit
+exports["topChar"] = 0x10FFFF; // unicode limit
 //exports["bottomChar"] = 0;
 
-std::string tc()
-{
-	char t = ;
-	std::string s;
-	s.push_back(char(0x10FFFF));
-	return s;
-}
-
-exports["topChar"] = boxed{
-
-	
-};
+//std::string tc()
+//{
+//	char t = ;
+//	std::string s;
+//	s.push_back(char(0x10FFFF));
+//	return s;
+//}
+//
+//exports["topChar"] = boxed{
+//
+//	
+//};
 
 
 
