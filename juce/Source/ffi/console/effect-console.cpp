@@ -7,14 +7,14 @@ FOREIGN_BEGIN( Effect_Console )
 
 exports["log"] = [](const boxed& s) -> boxed {
     return [=]() -> boxed {
-        std::cout << unbox<string>(s) << std::endl;
+        std::cout << unbox<juce::String>(s).toStdString() << std::endl;
         return boxed();
     };
 };
 
 exports["warn"] = [](const boxed& s) -> boxed {
     return [=]() -> boxed {
-        std::cout << unbox<string>(s) << std::endl;
+        std::cout << unbox<juce::String>(s).toStdString() << std::endl;
         return boxed();
     };
 };

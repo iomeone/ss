@@ -6,7 +6,7 @@ FOREIGN_BEGIN( Data_Semigroup )
 
 exports["concatString"] = [](const boxed& s1) -> boxed {
     return [=](const boxed& s2) -> boxed {
-        return unbox<string>(s1) + unbox<string>(s2);
+        return unbox<juce::String>(s1) + unbox<juce::String>(s2);
     };
 };
 

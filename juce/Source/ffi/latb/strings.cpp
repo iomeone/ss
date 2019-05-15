@@ -17,10 +17,11 @@ FOREIGN_BEGIN( Data_String_Common )
 exports["replace"] = [](const boxed& s1) -> boxed {
   return [=](const boxed& s2) -> boxed {
     return [=](const boxed& s3) -> boxed {
-      string ss(unbox<string>(s3));
-      string sp(unbox<string>(s1));
-      const auto found = ss.find(unbox<string>(sp));
-      return found == string::npos ? ss : ss.replace(found, sp.size(), unbox<string>(s2));
+      std::string ss = (unbox<juce::String>(s3)).toStdString();
+      std::string sp = (unbox<juce::String>(s1)).toStdString();
+	  std::string s2_ = (unbox<juce::String>(s2)).toStdString();
+      const auto found = ss.find(sp);
+      return found == std::string::npos ? ss : ss.replace(found, sp.size(), s2_);
     };
   };
 };
@@ -30,11 +31,11 @@ exports["replace"] = [](const boxed& s1) -> boxed {
 
 exports["split"] = [](const boxed& p_) -> boxed {
 	return [=](const boxed& src_) -> boxed {
-		const string& p = unbox<string>(p_);
-		const string& s = unbox<string>(src_);
+		const juce::String& p = unbox<juce::String>(p_);
+		const juce::String& s = unbox<juce::String>(src_);
 
 		size_t pos_start = 0, pos_end, delim_len = p.length();
-		string token;
+		juce::String token;
 		array_t res;
 		if ( s.length() == 0)
 		{
@@ -49,13 +50,13 @@ exports["split"] = [](const boxed& p_) -> boxed {
 
 		if (p.length() > 0 && s.length() > 0)
 		{
-			while ((pos_end = s.find(p, pos_start)) != string::npos) {
-				token = s.substr(pos_start, pos_end - pos_start);
+			while ((pos_end = s.indexOf(pos_start, p )) != -1) {
+				token = s.substring(pos_start, pos_end);
 				pos_start = pos_end + delim_len;
 				res.push_back(boxed(token));
 			}
 
-			res.push_back(boxed(s.substr(pos_start)));
+			res.push_back(boxed(s.substring(pos_start)));
 		}
 		return res;
 
@@ -74,8 +75,8 @@ FOREIGN_BEGIN( Data_String_CodeUnits )
 // foreign import length :: String -> Int
 
 exports["length"] = [](const boxed& s_) -> boxed {
-  const string& s = unbox<string>(s_);
-  const int sz = s.size();
+  const juce::String& s = unbox<juce::String>(s_);
+  const int sz = s.length();
   assert(sz <= std::numeric_limits<int>::max());
   return sz;
 };
@@ -83,17 +84,24 @@ exports["length"] = [](const boxed& s_) -> boxed {
 // foreign import singleton :: Char -> String
 //
 exports["singleton"] = [](const boxed& c_) -> boxed {
-  return unbox<string>(c_);
+  return unbox<juce::String>(c_);
 };
 
 // foreign import toCharArray :: String -> Array Char
 //
 exports["toCharArray"] = [](const boxed& s_) -> boxed {
   array_t cs;
-  const string& s = unbox<string>(s_);
-  for (char c : s) {
-    cs.emplace_back(boxed(string(1,c)));
-  };
+  const juce::String& s = unbox<juce::String>(s_);
+
+  for (int i = 0; i < s.length(); i++)
+  {
+	  juce::String tmp = "";
+	  tmp += s[i];
+	  cs.emplace_back(boxed(tmp));
+  }
+  //for (char c : s) {
+  //  cs.emplace_back(boxed(string(1,c)));
+  //};
   return cs;
 };
 
@@ -103,7 +111,7 @@ exports["fromCharArray"] = [](const boxed& xs_) -> boxed {
     array_t xs = unbox<array_t>(xs_);
     std::stringstream result;
     for (auto it = xs.cbegin(), end = xs.cend(); it != end; it++) {
-      result << unbox<string>(*it);
+      result << unbox<juce::String>(*it);
     }
     return result.str();
 };
@@ -113,8 +121,8 @@ exports["fromCharArray"] = [](const boxed& xs_) -> boxed {
 exports["drop"] = [](const boxed& n_) -> boxed {
   return [=](const boxed& s_) -> boxed {
     auto n = unbox<int>(n_);
-    const string& s = unbox<string>(s_);
-    return n <= 0 ? s : n >= s.size() ? "" : s.substr(n);
+    const juce::String& s = unbox<juce::String>(s_);
+    return n <= 0 ? s : n >= s.length() ? "" : s.substring(n);
   };
 };
 
@@ -122,18 +130,18 @@ exports["drop"] = [](const boxed& n_) -> boxed {
 // foreign import take :: Int -> String -> String
 exports["take"] = [](const boxed& n_) -> boxed {
   return [=](const boxed& s_) -> boxed {
-    const string& s = unbox<string>(s_);
+    const juce::String& s = unbox<juce::String>(s_);
     auto n = std::max(unbox<int>(n_), 0);
-    auto l = s.size();
-    return n >= l ? s : (n < 1 ? string("") : s.substr(0, n));
+    auto l = s.length();
+    return n >= l ? s : (n < 1 ? juce::String("") : s.substring(0, n));
   };
 };
 
 exports["countPrefix"] = [](const boxed& f_) -> boxed {
   return [=](const boxed& s_) -> boxed {
-    const string& s = unbox<string>(s_);
+    const juce::String& s = unbox<juce::String>(s_);
     int i = 0;
-    while ( i<s.length() && unbox<bool>(f_(boxed(s.substr(i, 1)))) ) i++;
+    while ( i<s.length() && unbox<bool>(f_(boxed(s.substring(i, 1)))) ) i++;
     return i;
   };
 };
@@ -144,15 +152,15 @@ exports["_indexOf"] = [](const boxed& just_) -> boxed {
   return [=](const boxed& nothing_) -> boxed {
     return [=](const boxed& p_) -> boxed {
       return [=](const boxed& s_) -> boxed {
-        const string& p = unbox<string>(p_);
-        const string& s = unbox<string>(s_);
+        const juce::String& p = unbox<juce::String>(p_);
+        const juce::String& s = unbox<juce::String>(s_);
         //std::size_t found = s.find(p);
 #ifdef _WIN64
-		 int              found = s.find(p);
+		 int              found = s.indexOf(p);
 #else
-		 int              found = s.find(p);
+		 int              found = s.indexOf(p);
 #endif
-        return found==std::string::npos ? nothing_ : just_( found);
+        return found== -1 ? nothing_ : just_( found);
       };
     };
   };
@@ -190,7 +198,7 @@ FOREIGN_BEGIN(Data_String_CodePoints)
 exports["_unsafeCodePointAt0"] = [](const boxed& fallBack) -> boxed {
 
 	return [=](const boxed & str) -> boxed {
-		const string& s = unbox<string>(str);
+		const juce::String& s = unbox<juce::String>(str);
 		if (s.length() < 1)
 		{
 			return fallBack(str);
@@ -198,7 +206,7 @@ exports["_unsafeCodePointAt0"] = [](const boxed& fallBack) -> boxed {
 		}
 		else
 		{
-			return s[0]; // the code is wrong , bcz chinese character takes 2 or more byte. 
+			return int(s[0]); // the code is wrong , bcz chinese character takes 2 or more byte. 
 		}
 	};
 
@@ -213,7 +221,7 @@ exports["_toCodePointArray"] = [](const boxed& fallBack) -> boxed{
 
 		return [=](const boxed & str) -> boxed {
 
-			const string& s = unbox<string>(str);
+			const juce::String& s = unbox<juce::String>(str);
 			if (s.length() < 1)
 			{
 				//printf("fall back\n");
@@ -222,10 +230,12 @@ exports["_toCodePointArray"] = [](const boxed& fallBack) -> boxed{
 			else
 			{
 				array_t result;
-			
-				for (char c : s) {
-					result.push_back(boxed(c));
+				for (int i = 0; i < s.length(); i++)
+				{
+					result.push_back(boxed(int(s[i])));
 				}
+			
+
 				return result;
 			}
 		};
@@ -239,10 +249,10 @@ exports["_toCodePointArray"] = [](const boxed& fallBack) -> boxed{
 exports["_take"] = [](const boxed& fallBack) -> boxed {
 	return [=](const boxed& n_) -> boxed {
 		return [=](const boxed& s_) -> boxed {
-			const string& s = unbox<string>(s_);
+			const juce::String& s = unbox<juce::String>(s_);
 			auto n = std::max(unbox<int>(n_), 0);
-			auto l = s.size();
-			return n >= l ? s : (n < 1 ? string("") : s.substr(0, n)); // the code is wrong , bcz chinese character takes 2 or more byte. 
+			auto l = s.length();
+			return n >= l ? s : (n < 1 ? juce::String("") : s.substring(0, n)); // the code is wrong , bcz chinese character takes 2 or more byte. 
 		};
 	};
 
@@ -268,11 +278,11 @@ FOREIGN_BEGIN(Data_String_Unsafe)
 
 exports["charAt"] = [](const boxed& index_) -> boxed {
 	return [=](const boxed& str_) -> boxed {
-		const string& str = unbox<string>(str_);
+		const juce::String& str = unbox<juce::String>(str_);
 		const int &  index = unbox<int>(index_);
 
 		assert(str.length() >index && index >= 0);
-		return str.substr(index, 1);;
+		return str.substring(index, index+1);
 	};
 };
 

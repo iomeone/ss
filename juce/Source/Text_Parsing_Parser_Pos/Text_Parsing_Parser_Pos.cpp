@@ -30,19 +30,19 @@ auto updatePosString() -> const boxed& {
         return [=](const boxed& str) -> boxed {
             boxed updatePosChar = [=](const boxed& v) -> boxed {
                 return [=](const boxed& c) -> boxed {
-                    if (unbox<string>(c) == "\n") {
+                    if (unbox<juce::String>(c) == "\n") {
                         return dict_t{
                             { "line", unbox<int>(v["line"]) + 1 },
                             { "column", 1 }
                         };
                     };
-                    if (unbox<string>(c) == "\r") {
+                    if (unbox<juce::String>(c) == "\r") {
                         return dict_t{
                             { "line", unbox<int>(v["line"]) + 1 },
                             { "column", 1 }
                         };
                     };
-                    if (unbox<string>(c) == "\t") {
+                    if (unbox<juce::String>(c) == "\t") {
                         return dict_t{
                             { "line", v["line"] },
                             { "column", unbox<int>(unbox<int>(v["column"]) + 8) - unbox<int>(Data_EuclideanRing::mod()(Data_EuclideanRing::euclideanRingInt())(unbox<int>(v["column"]) - 1)(8)) }

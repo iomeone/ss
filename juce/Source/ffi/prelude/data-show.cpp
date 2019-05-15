@@ -13,21 +13,21 @@ exports["showNumberImpl"] = [](const boxed& n) -> boxed {
 };
 
 exports["showStringImpl"] = [](const boxed& s) -> boxed {
-    return "\"" + unbox<string>(s) + "\"";
+    return "\"" + unbox<juce::String>(s) + "\"";
 };
 
 exports["showArrayImpl"] = [](const boxed& f) -> boxed {
     return [=](const boxed& xs_) -> boxed {
     const auto& xs = unbox<array_t>(xs_);
-    string s("[");
+	juce::String s("[");
     auto count = xs.size();
     for (auto it = xs.cbegin(), end = xs.cend(); it != end; it++) {
-        s.append(unbox<string>(f(*it)));
+        s += unbox<juce::String>(f(*it));
         if (--count > 0) {
-          s.push_back(',');
+          s += ',';
         }
     }
-    s.push_back(']');
+    s += ']';
     return s;
     };
 };

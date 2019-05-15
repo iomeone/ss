@@ -31,13 +31,13 @@ exports["eqNumberImpl"] = [](const boxed& x_) -> boxed {
 
 exports["eqCharImpl"] = [](const boxed& c1) -> boxed {
     return [=](const boxed& c2) -> boxed {
-        return unbox<string>(c1) == unbox<string>(c2);
+        return unbox<juce::String>(c1) == unbox<juce::String>(c2);
     };
 };
 
 exports["eqStringImpl"] = [](const boxed& s1) -> boxed {
     return [=](const boxed& s2) -> boxed {
-        return unbox<string>(s1) == unbox<string>(s2);
+        return unbox<juce::String>(s1) == unbox<juce::String>(s2);
     };
 };
 

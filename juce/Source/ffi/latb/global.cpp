@@ -7,7 +7,7 @@
 FOREIGN_BEGIN( Global )
 
 exports["readFloat"] = [](const boxed& s_) -> boxed {
-    const std::string s = unbox<string>(s_);
+    const std::string s = unbox<juce::String>(s_).toStdString();
     std::istringstream i(s);
     double x;
     i >> x;

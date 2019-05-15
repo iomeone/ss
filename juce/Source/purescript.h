@@ -17,7 +17,7 @@
 
 #include <memory>
 #include <vector>
-#include <string>
+//#include <juce::String>//#include "../JuceLibraryCode/JuceHeader.h"
 #include <utility>
 #if !defined(NDEBUG)
 #include <limits>
@@ -28,10 +28,10 @@
 #include "functions.h"
 #include "dictionary.h"
 #include "recursion.h"
-
+#include "../JuceLibraryCode/JuceHeader.h"
 namespace purescript {
-
-    using std::string;
+	//using std::juce::String;
+   
 
     class boxed {
     public:
@@ -78,9 +78,9 @@ namespace purescript {
         boxed(const unsigned long n);
         boxed(const double n) noexcept : _double_(n) {}
         boxed(const bool b) noexcept : _bool_(b) {}
-        boxed(const char s[]) : shared(std::make_shared<string>(s)) {}
-        boxed(string&& s) : shared(std::make_shared<string>(std::move(s))) {}
-        boxed(const string& s) : shared(std::make_shared<string>(s)) {}
+        boxed(const char s[]) : shared(std::make_shared<juce::String>(s)) {}
+        boxed(juce::String&& s) : shared(std::make_shared<juce::String>(std::move(s))) {}
+        boxed(const juce::String& s) : shared(std::make_shared<juce::String>(s)) {}
         boxed(array_t&& l) : shared(std::make_shared<array_t>(std::move(l))) {}
         boxed(const array_t& l) : shared(std::make_shared<array_t>(l)) {}
         boxed(dict_t&& m) : shared(std::make_shared<dict_t>(std::move(m))) {}

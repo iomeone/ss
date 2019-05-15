@@ -5,14 +5,14 @@ FOREIGN_BEGIN( Prelude_Extended )
 // foreign import unsafePerformEffect :: forall a. Effect a -> a
 //
 exports["unsafeLog"] = [](const boxed& s_) -> boxed {
-  const string s(unbox<string>(s_));
+  const std::string s = (unbox<juce::String>(s_)).toStdString();
   std::cout << "TRACE: " << s << std::endl;
   return s;
 };
 
 // foreign import toCharCode :: Char -> Int
 exports["toCharCode"] = [](const boxed& c_) -> boxed {
-  const int i = unbox<string>(c_)[0];
+  const int i = unbox<juce::String>(c_)[0];
   return i;
 };
 
@@ -45,7 +45,7 @@ FOREIGN_BEGIN( Record_Unsafe )
 //-- | If the key does not exist this will cause a runtime error elsewhere.
 //foreign import unsafeGet :: forall r a. String -> Record r -> a
 exports["unsafeGet"] = [](const boxed& key_) -> boxed {
-  const string key(unbox<string>(key_));
+  const juce::String key(unbox<juce::String>(key_));
   return [=](const boxed& rec_) -> boxed {
     return key;
 };

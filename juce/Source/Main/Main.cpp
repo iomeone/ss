@@ -26,7 +26,7 @@ auto main() -> boxed {
 } // end namespace Main
 
 int main(int argc, const char * argv[]) {
-    //Main::main()();
+    Main::main()();
 	//juce::String s = CharPointer_UTF8("\xe4\xbd\xa0\xe6\x98\xaf\xe8\xb0\x81\xf0\x9d\x85\xa2");
 
 	juce::String s = CharPointer_UTF8("中文可以一个一个输出啦 繁體字也一個個輸出");

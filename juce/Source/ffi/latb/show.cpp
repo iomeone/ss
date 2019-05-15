@@ -35,18 +35,18 @@ exports["showCharImpl"] = [](const boxed& c_) -> boxed {
 /* FOREIGN_BEGIN( Test_Main ) */
 
 exports["join"] = [](const boxed& separator_) -> boxed {
-  const string& separator = unbox<string>(separator_);
+  const juce::String& separator = unbox<juce::String>(separator_);
   return [=](const boxed& xs_) -> boxed {
     array_t xs = unbox<array_t>(xs_);
     const auto length = xs.size();
-    std::stringstream result;
+	juce::String result;
     auto it = xs.cbegin();
-    result << unbox<string>(*it++);
+    result += unbox<juce::String>(*it++);
     for (; it != xs.cend(); it++) {
-      result << separator;
-      result << unbox<string>(*it);
+      result += separator;
+      result += unbox<juce::String>(*it);
     }
-    return result.str();
+    return result;
   };
 };
 

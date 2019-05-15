@@ -173,7 +173,7 @@ auto join1With() -> const boxed& {
 };
 auto fromString() -> const boxed& {
     static const boxed _ = [](const boxed& v) -> boxed {
-        if (unbox<string>(v) == "") {
+        if (unbox<juce::String>(v) == "") {
             return Data_Maybe::Nothing();
         };
         return Data_Maybe::Just()(v);

@@ -8,7 +8,8 @@ exports["assert'"] = [](const boxed& message) -> boxed {
     return [=](const boxed& success_) -> boxed {
         const auto success = unbox<bool>(success_);
         return [=]() -> boxed {
-            if (!success) throw std::runtime_error(unbox<string>(message));
+			juce::String str = unbox<juce::String>(message);
+            if (!success) throw std::runtime_error(str.toStdString());
             return boxed();
         };
     };

@@ -25,7 +25,7 @@ FOREIGN_BEGIN( Data_Ord )
 exports["ordBooleanImpl"] = ordImpl<bool>;
 exports["ordIntImpl"]     = ordImpl<int>;
 exports["ordNumberImpl"]  = ordImpl<double>;
-exports["ordStringImpl"]  = ordImpl<string>;
-exports["ordCharImpl"]    = ordImpl<string>;
+exports["ordStringImpl"]  = ordImpl<juce::String>;
+exports["ordCharImpl"]    = ordImpl<juce::String>;
 
 FOREIGN_END

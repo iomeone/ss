@@ -351,7 +351,7 @@ auto codePointAt() -> const boxed& {
                 return Data_Maybe::Nothing();
             };
             if (unbox<int>(v) == 0) {
-                if (unbox<string>(v1) == "") {
+                if (unbox<juce::String>(v1) == "") {
                     return Data_Maybe::Nothing();
                 };
             };

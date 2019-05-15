@@ -51,7 +51,7 @@ exports["fromStringAsImpl"] = [](const boxed& just_) -> boxed {
     return [=](const boxed& radix_) -> boxed {
       auto radix = unbox<int>(radix_);
       return [=](const boxed& s_) -> boxed {
-        const string& s = unbox<string>(s_);
+        const std::string& s = unbox<juce::String>(s_).toStdString();
         int i;
         std::stringstream ss;
         switch (radix) {
