@@ -19,7 +19,7 @@ using namespace std;
 namespace Main {
 
 auto main() -> boxed {
-    return Effect_Console::logShow()(Data_Show::showBoolean())(Data_Char_Unicode::isDigit()("2"));
+    return Effect_Console::logShow()(Data_Show::showBoolean())(Data_Char_Unicode::isDigit()("a"));
 };
 
 
@@ -27,9 +27,20 @@ auto main() -> boxed {
 
 int main(int argc, const char * argv[]) {
     Main::main()();
-	//juce::String s = CharPointer_UTF8("\xe4\xbd\xa0\xe6\x98\xaf\xe8\xb0\x81\xf0\x9d\x85\xa2");
 
-	juce::String s = CharPointer_UTF8("中文可以一个一个输出啦 繁體字也一個個輸出");
+	//juce::String s;
+	//s += wchar_t(0x10FFFF);
+	//juce::String s = CharPointer_UTF8("\x00");
+
+
+	//cout << hex << s[0] << endl;
+
+	//char u8string[] = u8"你好";
+
+	//cout << hex << int(u8string[0]) << endl;
+	////juce::String s = CharPointer_UTF8("\xe4\xbd\xa0\xe6\x98\xaf\xe8\xb0\x81\xf0\x9d\x85\xa2");
+
+	juce::String s = CharPointer_UTF8("中文test");
 	wcout.imbue(locale("", LC_CTYPE));
 
 	for(int i = 0 ; i < s.length(); i++)
