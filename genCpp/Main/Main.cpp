@@ -5,7 +5,6 @@
 #include "Data_Array/Data_Array.h"
 #include "Data_Char_Unicode/Data_Char_Unicode.h"
 #include "Data_Either/Data_Either.h"
-#include "Data_Eq/Data_Eq.h"
 #include "Data_Function/Data_Function.h"
 #include "Data_Functor/Data_Functor.h"
 #include "Data_Identity/Data_Identity.h"
@@ -45,6 +44,11 @@ auto Kill() -> const boxed& {
     };
     return _;
 };
+auto showKill() -> boxed {
+    return Data_Show::Show()([=](const boxed& v) -> boxed {
+        return Data_Semigroup::append()(Data_Semigroup::semigroupString())("name:")(Data_Semigroup::append()(Data_Semigroup::semigroupString())(v["value0"])(Data_Semigroup::append()(Data_Semigroup::semigroupString())(" user id:")(v["value1"])));
+    });
+};
 auto s1() -> const boxed& {
     static const boxed _ = [](const boxed& dictStringLike) -> boxed {
         return [=](const boxed& dictMonad) -> boxed {
@@ -55,27 +59,20 @@ auto s1() -> const boxed& {
 };
 auto parseTest() -> const boxed& {
     static const boxed _ = [](const boxed& dictShow) -> boxed {
-        return [=](const boxed& dictEq) -> boxed {
-            return [=](const boxed& input) -> boxed {
-                return [=](const boxed& p) -> boxed {
-                    boxed v = Text_Parsing_Parser::runParser()(input)(p);
-                    if (unbox<dict_t>(v).contains("Right")) {
-                        return Effect_Console::logShow()(Data_Show::showString())(Data_Semigroup::append()(Data_Semigroup::semigroupString())("parser result is")(Data_Show::show()(dictShow)(v["value0"])));
-                    };
-                    if (unbox<dict_t>(v).contains("Left")) {
-                        return Effect_Console::logShow()(Data_Show::showString())(Data_Semigroup::append()(Data_Semigroup::semigroupString())("error: ")(Data_Show::show()(Text_Parsing_Parser::showParseError())(v["value0"])));
-                    };
-                    THROW_("PatternMatchFailure: ""Failed pattern match at Main (line 50, column 21 - line 53, column 46): ");
+        return [=](const boxed& input) -> boxed {
+            return [=](const boxed& p) -> boxed {
+                boxed v = Text_Parsing_Parser::runParser()(input)(p);
+                if (unbox<dict_t>(v).contains("Right")) {
+                    return Effect_Console::log()(Data_Semigroup::append()(Data_Semigroup::semigroupString())("Parser result is: ")(Data_Show::show()(dictShow)(v["value0"])));
                 };
+                if (unbox<dict_t>(v).contains("Left")) {
+                    return Effect_Console::logShow()(Data_Show::showString())(Data_Semigroup::append()(Data_Semigroup::semigroupString())("error: ")(Data_Show::show()(Text_Parsing_Parser::showParseError())(v["value0"])));
+                };
+                THROW_("PatternMatchFailure: ""Failed pattern match at Main (line 60, column 21 - line 63, column 46): ");
             };
         };
     };
     return _;
-};
-auto parseSingleDigitInt() -> boxed {
-    return Control_Bind::bind()(Text_Parsing_Parser::bindParserT()(Data_Identity::monadIdentity()))(Data_Array::some()(Text_Parsing_Parser::alternativeParserT()(Data_Identity::monadIdentity()))(Text_Parsing_Parser::lazyParserT())(Text_Parsing_Parser_Token::digit()(Data_Identity::monadIdentity())))([=](const boxed& v) -> boxed {
-        return Control_Applicative::pure()(Text_Parsing_Parser::applicativeParserT()(Data_Identity::monadIdentity()))(v);
-    });
 };
 auto parens() -> const boxed& {
     static const boxed _ = [](const boxed& dictMonad) -> boxed {
@@ -83,13 +80,20 @@ auto parens() -> const boxed& {
     };
     return _;
 };
+auto parseNameNum() -> boxed {
+    return Control_Bind::bind()(Text_Parsing_Parser::bindParserT()(Data_Identity::monadIdentity()))(Main::parens()(Data_Identity::monadIdentity())(Data_Functor::map()(Text_Parsing_Parser::functorParserT()(Data_Identity::functorIdentity()))(Data_String_CodeUnits::fromCharArray())(Data_Array::some()(Text_Parsing_Parser::alternativeParserT()(Data_Identity::monadIdentity()))(Text_Parsing_Parser::lazyParserT())(Text_Parsing_Parser_String::satisfy()(Text_Parsing_Parser_String::stringLikeString())(Data_Identity::monadIdentity())(Data_Char_Unicode::isLetter())))))([=](const boxed& v) -> boxed {
+        return Control_Bind::bind()(Text_Parsing_Parser::bindParserT()(Data_Identity::monadIdentity()))(Data_Functor::map()(Text_Parsing_Parser::functorParserT()(Data_Identity::functorIdentity()))(Data_String_CodeUnits::fromCharArray())(Data_Array::some()(Text_Parsing_Parser::alternativeParserT()(Data_Identity::monadIdentity()))(Text_Parsing_Parser::lazyParserT())(Text_Parsing_Parser_Token::digit()(Data_Identity::monadIdentity()))))([=](const boxed& v1) -> boxed {
+            return Control_Applicative::pure()(Text_Parsing_Parser::applicativeParserT()(Data_Identity::monadIdentity()))(Main::Kill()(v)(v1));
+        });
+    });
+};
 auto opTest() -> boxed {
     return Text_Parsing_Parser_Combinators::chainl()(Data_Identity::monadIdentity())(Data_Functor::map()(Text_Parsing_Parser::functorParserT()(Data_Identity::functorIdentity()))(Data_String_CodeUnits::singleton())(Text_Parsing_Parser_String::anyChar()(Text_Parsing_Parser_String::stringLikeString())(Data_Identity::monadIdentity())))(Data_Functor::voidLeft()(Text_Parsing_Parser::functorParserT()(Data_Identity::functorIdentity()))(Text_Parsing_Parser_String::_char_()(Text_Parsing_Parser_String::stringLikeString())(Data_Identity::monadIdentity())("+"))(Data_Semigroup::append()(Data_Semigroup::semigroupString())))("");
 };
 auto main() -> const boxed& {
     static const boxed _ = []() -> boxed {
-        Effect_Console::log()("parser test:")();
-        return Main::parseTest()(Data_Show::showArray()(Data_Show::showChar()))(Data_Eq::eqArray()(Data_Eq::eqChar()))("12ab")(Main::parseSingleDigitInt())();
+        Effect_Console::log()("Parser In Cpp:")();
+        return Main::parseTest()(Main::showKill())("(zhuzhao)121243")(Main::parseNameNum())();
     };
     return _;
 };

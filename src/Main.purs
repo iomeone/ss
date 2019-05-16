@@ -7,7 +7,7 @@ import Prelude hiding (between,when)
 import Control.Alt ((<|>))
 import Control.Lazy (fix)
 import Data.Array (some)
-import Data.Char.Unicode (digitToInt)
+import Data.Char.Unicode (digitToInt, isAscii, isLetter)
 import Data.Either (Either(..))
 import Data.List (List(..), fromFoldable, many)
 import Data.Maybe (Maybe(..))
@@ -26,18 +26,28 @@ import Text.Parsing.Parser.Token (TokenParser, match, when, token, makeTokenPars
 
 
 data Kill
-  = Kill String Number
+  = Kill String String 
 
-
-parseSingleDigitInt :: Parser String (Array Char)
-parseSingleDigitInt = do
-  d <- some digit
-  pure d
-
-
+instance showKill :: Show Kill where
+  show (Kill a b) = "name:" <> a <> " user id:" <> b 
 
 parens :: forall m a. Monad m => ParserT String m a -> ParserT String m a
 parens = between (string "(") (string ")")
+
+
+parseNameNum :: Parser String  Kill
+parseNameNum = do
+
+  name <- parens (fromCharArray <$> (some $ satisfy (isLetter)))                --    name <- parens (fromCharArray <$> (some $anyChar))
+  
+  d <- fromCharArray <$> some digit
+
+  pure ( Kill name d )
+
+
+
+
+
 
 
 s1 = string "1"
@@ -46,23 +56,24 @@ opTest :: Parser String String
 opTest = chainl (singleton <$> anyChar) (char '+' $> append) ""
 
 
-parseTest :: forall s a. Show a => Eq a => s  -> Parser s a -> Effect Unit
+parseTest :: forall s a. Show a =>  s  -> Parser s a -> Effect Unit
 parseTest input p = case runParser input p of
   Right actual -> do
-    logShow $ "parser result is" <> show actual
+    log $ "Parser result is: " <> show actual
   Left err -> logShow ("error: " <> show err) 
 
 
 
 main :: Effect Unit
 main = do
---  log $ show (factorial 3)
-  log  "parser test:"
+
+  log  "Parser In Cpp:"
+  parseTest "(zhuzhao)121243" parseNameNum
+
+
 
 
 --  parseTest "a+b+c" opTest 
-  parseTest "12ab" parseSingleDigitInt
-
 
 
 factorial :: Int->Int

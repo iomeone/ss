@@ -428,7 +428,7 @@ auto isLower() -> boxed {
 };
 auto isLatin1() -> const boxed& {
     static const boxed _ = [](const boxed& c) -> boxed {
-        return Data_Ord::lessThanOrEq()(Data_Ord::ordChar())(c)(u8"\U00006bcf");
+		return Data_Ord::lessThanOrEq()(Data_Ord::ordChar())(c) (juce::String(CharPointer_UTF8("\xE6\xAF\x8F"))); ;// (u8"\U00006bcf");
     };
     return _;
 };
@@ -468,7 +468,7 @@ auto isAsciiLower() -> const boxed& {
 };
 auto isAscii() -> const boxed& {
     static const boxed _ = [](const boxed& c) -> boxed {
-        return Data_Ord::lessThan()(Data_Ord::ordChar())(c)(u8"\U00008059");
+		return Data_Ord::lessThan()(Data_Ord::ordChar())(c) (juce::String(CharPointer_UTF8("\xE8\x81\x99"))); // (u8"\U00008059");
     };
     return _;
 };
