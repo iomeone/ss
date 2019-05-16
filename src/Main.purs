@@ -1,11 +1,70 @@
 module Main where
 
 
+import Effect.Console (log)
 import Prelude hiding (between,when)
-import Data.Char.Unicode (digitToInt, isDigit)
+
+import Control.Alt ((<|>))
+import Control.Lazy (fix)
+import Data.Array (some)
+import Data.Char.Unicode (digitToInt)
+import Data.Either (Either(..))
+import Data.List (List(..), fromFoldable, many)
+import Data.Maybe (Maybe(..))
+import Data.String.CodeUnits (fromCharArray, singleton)
+import Data.Tuple (Tuple(..))
 import Effect (Effect)
 import Effect.Console (logShow)
 
+import Text.Parsing.Parser (Parser, fail, ParserT, runParser, parseErrorPosition)
+import Text.Parsing.Parser.Combinators (endBy1, sepBy1, optionMaybe, try, chainl, between)
+import Text.Parsing.Parser.Expr (Assoc(..), Operator(..), buildExprParser)
+import Text.Parsing.Parser.Language (javaStyle, haskellStyle, haskellDef)
+import Text.Parsing.Parser.Pos (Position(..), initialPos)
+import Text.Parsing.Parser.String (eof, string, char, satisfy, anyChar)
+import Text.Parsing.Parser.Token (TokenParser, match, when, token, makeTokenParser, digit)
+
+
+data Kill
+  = Kill String Number
+
+
+parseSingleDigitInt :: Parser String (Array Char)
+parseSingleDigitInt = do
+  d <- some digit
+  pure d
+
+
+
+parens :: forall m a. Monad m => ParserT String m a -> ParserT String m a
+parens = between (string "(") (string ")")
+
+
+s1 = string "1"
+
+opTest :: Parser String String
+opTest = chainl (singleton <$> anyChar) (char '+' $> append) ""
+
+
+parseTest :: forall s a. Show a => Eq a => s  -> Parser s a -> Effect Unit
+parseTest input p = case runParser input p of
+  Right actual -> do
+    logShow $ "parser result is" <> show actual
+  Left err -> logShow ("error: " <> show err) 
+
+
+
 main :: Effect Unit
 main = do
-  logShow (isDigit '4')
+--  log $ show (factorial 3)
+  log  "parser test:"
+
+
+--  parseTest "a+b+c" opTest 
+  parseTest "12ab" parseSingleDigitInt
+
+
+
+factorial :: Int->Int
+factorial 0 = 1
+factorial n = n * factorial (n-1)

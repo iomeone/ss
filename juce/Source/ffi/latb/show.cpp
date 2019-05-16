@@ -8,6 +8,7 @@
 FOREIGN_BEGIN( Data_Show )
 
 exports["showCharImpl"] = [](const boxed& c_) -> boxed {
+	juce::String jc = unbox<juce::String> (c_);
     std::string c =  "\'";
     c += unbox<char>(c_);
     c += "\'";
@@ -18,18 +19,18 @@ exports["showCharImpl"] = [](const boxed& c_) -> boxed {
     /*   s += utf32conv.to_bytes(c); */
     /* } */
     /* s.push_back('\''); */
-    return c;
+    return jc;
 };
-// foreign import cons :: forall a. a -> Array a -> Array a
-// duplicate to Data.Array.cons
-//exports["cons"] = [](const boxed& e_) -> boxed {
-//  return [=](const boxed& xs_) -> boxed {
-//    array_t xs = unbox<array_t>(xs_);
-//    array_t result(xs);
-//    result.emplace_front(e_);
-//    return result;
-//  };
-//};
+ //foreign import cons :: forall a. a -> Array a -> Array a
+ //duplicate to Data.Array.cons
+exports["cons"] = [](const boxed& e_) -> boxed {
+  return [=](const boxed& xs_) -> boxed {
+    array_t xs = unbox<array_t>(xs_);
+    array_t result(xs);
+    result.emplace(result.begin(), e_ );
+    return result;
+  };
+};
 
 /* FOREIGN_END */
 /* FOREIGN_BEGIN( Test_Main ) */

@@ -8,14 +8,14 @@
 
 namespace Data_Array {
     using namespace purescript;
-    //static auto cons_(const boxed& e_) -> boxed {
-    //  return [=](const boxed& xs_) -> boxed {
-    //    array_t xs = unbox<array_t>(xs_);
-    //    array_t result(xs);
-    //    result.emplace_front(e_);
-    //    return result;
-    //  };
-    //};
+    static auto cons_(const boxed& e_) -> boxed {
+      return [=](const boxed& xs_) -> boxed {
+        array_t xs = unbox<array_t>(xs_);
+        array_t result(xs);
+        result.emplace(result.begin(), e_);
+        return result;
+      };
+    };
 }
 
 FOREIGN_BEGIN( Data_Array )
@@ -34,23 +34,23 @@ exports["replicate"] = [](const boxed& n_) -> boxed {
 //    . (forall b. (a -> b -> b) -> b -> f a -> b)
 //   -> f a
 //   -> Array a
-//exports["fromFoldableImpl"] = [](const boxed& foldr_) -> boxed {
-//  std::cout << "--> fromFoldableImpl "<< std::endl;
-//  return [=](const boxed& xs_) -> boxed {
-//    const auto& xs = unbox<array_t>(xs_);
-//    return foldr_(cons_)(array_t())(xs);
-//  };
-//};
-// foreign import cons :: forall a. a -> Array a -> Array a
-//
-//exports["cons"] = [](const boxed& e_) -> boxed {
-//  return [=](const boxed& xs_) -> boxed {
-//    array_t xs = unbox<array_t>(xs_);
-//    array_t result(xs);
-//    result.emplace_front(e_);
-//    return result;
-//  };
-//};
+exports["fromFoldableImpl"] = [](const boxed& foldr_) -> boxed {
+  std::cout << "--> fromFoldableImpl "<< std::endl;
+  return [=](const boxed& xs_) -> boxed {
+    const auto& xs = unbox<array_t>(xs_);
+    return foldr_(cons_)(array_t())(xs);
+  };
+};
+ //foreign import cons :: forall a. a -> Array a -> Array a
+
+exports["cons"] = [](const boxed& e_) -> boxed {
+  return [=](const boxed& xs_) -> boxed {
+    array_t xs = unbox<array_t>(xs_);
+    array_t result(xs);
+    result.emplace(result.begin(), e_);
+    return result;
+  };
+};
 
 //uncons :: forall a. Array a -> Maybe { head :: a, tail :: Array a }
 //uncons = uncons' (const Nothing) \x xs -> Just { head: x, tail: xs }
