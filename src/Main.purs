@@ -29,7 +29,7 @@ data Kill
   = Kill String String 
 
 instance showKill :: Show Kill where
-  show (Kill a b) = "name:" <> a <> " user id:" <> b 
+  show (Kill a b) = "name : " <> a <> " uid : " <> b 
 
 parens :: forall m a. Monad m => ParserT String m a -> ParserT String m a
 parens = between (string "(") (string ")")

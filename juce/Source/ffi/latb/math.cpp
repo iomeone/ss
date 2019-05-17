@@ -31,7 +31,9 @@ exports["sqrt"] = [](const boxed& x) -> boxed {
     return std::sqrt(unbox<double>(x));
 };
 exports["floor"] = [](const boxed& x) -> boxed {
-    return std::floor(unbox<double>(x));
+	double tf = unbox<double>(x);
+	double res = std::floorf(tf);
+	return res;
 };
 exports["log"] = [](const boxed& x) -> boxed {
     return std::log(unbox<double>(x));

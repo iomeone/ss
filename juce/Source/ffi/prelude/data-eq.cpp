@@ -19,11 +19,13 @@ exports["eqIntImpl"] = [](const boxed& n1_) -> boxed {
         return n1 == unbox<int>(n2);
     };
 };
-
+// std::numeric_limits<double>::infinity()
 exports["eqNumberImpl"] = [](const boxed& x_) -> boxed {
     const auto x = unbox<double>(x_);
     return [=](const boxed& y_) -> boxed {
         const auto y = unbox<double>(y_);
+		if (x == std::numeric_limits<double>::infinity() || abs(y) == std::numeric_limits<double>::infinity())
+			return false;
         return std::abs(x-y) <= std::numeric_limits<double>::epsilon() * std::abs(x+y) ||
                std::abs(x-y) < std::numeric_limits<double>::min();
     };

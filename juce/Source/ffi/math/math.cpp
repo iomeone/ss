@@ -6,7 +6,7 @@
 FOREIGN_BEGIN( Math )
 
 exports["round"] = [](const boxed& x) -> boxed {
-    return std::round(unbox<double>(x));
+    return std::roundf(unbox<double>(x));
 };
 
 exports["abs"] = [](const boxed& x) -> boxed {

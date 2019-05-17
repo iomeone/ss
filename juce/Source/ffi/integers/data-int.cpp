@@ -8,7 +8,8 @@
 FOREIGN_BEGIN( Data_Int )
 
 exports["toNumber"] = [](const boxed& n) -> boxed {
-    return static_cast<double>(unbox<int>(n));
+	double x = static_cast<double>(unbox<int>(n));
+    return x;
 };
 
 exports["pow"] = [](const boxed& n_) -> boxed {

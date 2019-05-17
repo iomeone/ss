@@ -7280,9 +7280,19 @@ auto bsearch() -> const boxed& {
                             };
                             if (unbox<bool>(Data_Boolean::otherwise())) {
                                 boxed j = Data_Int::floor()(unbox<double>(Data_Int::toNumber()(unbox<int>(i) + unbox<int>(k))) / 2.0);
+
+								//boxed b_testInt = Data_Int::floor()(2.5);
+								//int testInt = unbox<int>(b_testInt);
+
                                 boxed b = [=](const boxed& dictPartial) -> boxed {
                                     return Data_Array::unsafeIndex()(dictPartial)(array)(j);
                                 }(undefined);
+
+								//int ii = unbox<int>(i);
+								//int jj = unbox<int>(j);
+								//int kk = unbox<int>(k);
+								//std::cout << " i is " << ii << " jj is " << jj << " kk is " << kk << std::endl;
+
                                 boxed v = compare(a)(b);
                                 if (unbox<dict_t>(v).contains("EQ")) {
                                     return Data_Maybe::Just()(b);

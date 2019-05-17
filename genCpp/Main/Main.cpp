@@ -46,7 +46,7 @@ auto Kill() -> const boxed& {
 };
 auto showKill() -> boxed {
     return Data_Show::Show()([=](const boxed& v) -> boxed {
-        return Data_Semigroup::append()(Data_Semigroup::semigroupString())("name:")(Data_Semigroup::append()(Data_Semigroup::semigroupString())(v["value0"])(Data_Semigroup::append()(Data_Semigroup::semigroupString())(" user id:")(v["value1"])));
+        return Data_Semigroup::append()(Data_Semigroup::semigroupString())("name : ")(Data_Semigroup::append()(Data_Semigroup::semigroupString())(v["value0"])(Data_Semigroup::append()(Data_Semigroup::semigroupString())(" uid : ")(v["value1"])));
     });
 };
 auto s1() -> const boxed& {
