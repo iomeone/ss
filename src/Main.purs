@@ -25,13 +25,24 @@ import Text.Parsing.Parser.String (eof, string, char, satisfy, anyChar)
 import Text.Parsing.Parser.Token (TokenParser, match, when, token, makeTokenParser, digit)
 
 
+
+notFollowedBy :: forall a. Parser String a -> Parser String Unit
+notFollowedBy p = try $ (try p *> fail "Negated parser succeeded") <|> pure unit
+
+
+
+
 data Kill
   = Kill String String 
 
 instance showKill :: Show Kill where
   show (Kill a b) = "name : " <> a <> " uid : " <> b 
 
-parens :: forall m a. Monad m => ParserT String m a -> ParserT String m a
+-- parens :: forall m a. Monad m => ParserT String m a -> ParserT String m a
+-- parens = between (string "(") (string ")")
+
+-- we could also write as this.
+parens :: forall a. Parser String  a -> Parser String  a
 parens = between (string "(") (string ")")
 
 
@@ -68,7 +79,7 @@ main :: Effect Unit
 main = do
 
   log  "Parser In Cpp:"
-  parseTest "(zhuzhao)121243" parseNameNum
+  parseTest "(zhuzhao)1212438" parseNameNum
 
 
 

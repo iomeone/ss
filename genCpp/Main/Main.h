@@ -13,9 +13,10 @@ auto Kill() -> const boxed&;
 auto showKill() -> boxed;
 auto s1() -> const boxed&;
 auto parseTest() -> const boxed&;
-auto parens() -> const boxed&;
+auto parens() -> boxed;
 auto parseNameNum() -> boxed;
 auto opTest() -> boxed;
+auto notFollowedBy() -> const boxed&;
 auto main() -> const boxed&;
 auto factorial() -> const boxed&;
 
