@@ -1,12 +1,10 @@
 #include "Control_Alt/Control_Alt.h"
 #include "Control_Applicative/Control_Applicative.h"
-#include "Control_Apply/Control_Apply.h"
 #include "Control_Bind/Control_Bind.h"
 #include "Control_Lazy/Control_Lazy.h"
 #include "Data_Array/Data_Array.h"
 #include "Data_Char_Unicode/Data_Char_Unicode.h"
 #include "Data_Either/Data_Either.h"
-#include "Data_Foldable/Data_Foldable.h"
 #include "Data_Function/Data_Function.h"
 #include "Data_Functor/Data_Functor.h"
 #include "Data_Identity/Data_Identity.h"
@@ -18,7 +16,6 @@
 #include "Data_Show/Data_Show.h"
 #include "Data_String_CodeUnits/Data_String_CodeUnits.h"
 #include "Data_Tuple/Data_Tuple.h"
-#include "Data_Unit/Data_Unit.h"
 #include "Effect/Effect.h"
 #include "Effect_Console/Effect_Console.h"
 #include "Prelude/Prelude.h"
@@ -71,11 +68,14 @@ auto parseTest() -> const boxed& {
                 if (unbox<dict_t>(v).contains("Left")) {
                     return Effect_Console::logShow()(Data_Show::showString())(Data_Semigroup::append()(Data_Semigroup::semigroupString())("error: ")(Data_Show::show()(Text_Parsing_Parser::showParseError())(v["value0"])));
                 };
-                THROW_("PatternMatchFailure: ""Failed pattern match at Main (line 76, column 21 - line 79, column 46): ");
+                THROW_("PatternMatchFailure: ""Failed pattern match at Main (line 74, column 21 - line 77, column 46): ");
             };
         };
     };
     return _;
+};
+auto parseTagName() -> boxed {
+    return Data_Functor::map()(Text_Parsing_Parser::functorParserT()(Data_Identity::functorIdentity()))(Data_String_CodeUnits::fromCharArray())(Data_Array::some()(Text_Parsing_Parser::alternativeParserT()(Data_Identity::monadIdentity()))(Text_Parsing_Parser::lazyParserT())(Text_Parsing_Parser_Token::alphaNum()(Data_Identity::monadIdentity())));
 };
 auto parens() -> boxed {
     return Text_Parsing_Parser_Combinators::between()(Data_Identity::monadIdentity())(Text_Parsing_Parser_String::_string_()(Text_Parsing_Parser_String::stringLikeString())(Data_Identity::monadIdentity())("("))(Text_Parsing_Parser_String::_string_()(Text_Parsing_Parser_String::stringLikeString())(Data_Identity::monadIdentity())(")"));
@@ -90,14 +90,8 @@ auto parseNameNum() -> boxed {
 auto opTest() -> boxed {
     return Text_Parsing_Parser_Combinators::chainl()(Data_Identity::monadIdentity())(Data_Functor::map()(Text_Parsing_Parser::functorParserT()(Data_Identity::functorIdentity()))(Data_String_CodeUnits::singleton())(Text_Parsing_Parser_String::anyChar()(Text_Parsing_Parser_String::stringLikeString())(Data_Identity::monadIdentity())))(Data_Functor::voidLeft()(Text_Parsing_Parser::functorParserT()(Data_Identity::functorIdentity()))(Text_Parsing_Parser_String::_char_()(Text_Parsing_Parser_String::stringLikeString())(Data_Identity::monadIdentity())("+"))(Data_Semigroup::append()(Data_Semigroup::semigroupString())))("");
 };
-auto notFollowedBy() -> const boxed& {
-    static const boxed _ = [](const boxed& p) -> boxed {
-        return Text_Parsing_Parser_Combinators::_try_()(Data_Identity::monadIdentity())(Control_Alt::alt()(Text_Parsing_Parser::altParserT()(Data_Identity::monadIdentity()))(Control_Apply::applySecond()(Text_Parsing_Parser::applyParserT()(Data_Identity::monadIdentity()))(Text_Parsing_Parser_Combinators::_try_()(Data_Identity::monadIdentity())(p))(Text_Parsing_Parser::fail()(Data_Identity::monadIdentity())("Negated parser succeeded")))(Control_Applicative::pure()(Text_Parsing_Parser::applicativeParserT()(Data_Identity::monadIdentity()))(Data_Unit::unit())));
-    };
-    return _;
-};
 auto main() -> boxed {
-    return Effect_Console::log()(Data_Show::show()(Data_Show::showArray()(Data_Show::showInt()))(Data_Array::fromFoldable()(Data_Foldable::foldableMaybe())(Data_Maybe::Just()(1))));
+    return Main::parseTest()(Data_Show::showString())("zhuzhao)1212438")(Main::parseTagName());
 };
 auto factorial() -> const boxed& {
     static const boxed _ = [](const boxed& v) -> boxed {

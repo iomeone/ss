@@ -173,6 +173,28 @@ exports["indexImpl"] = [](const boxed& just_) -> boxed {
   };
 };
 
+
+exports["findIndexImpl"] = [](const boxed& just_) -> boxed {
+	return  [=](const boxed& nothing_) -> boxed {
+		return [=](const boxed& f_) -> boxed {
+			return [=](const boxed& xs_) -> boxed {
+				const auto& xs = unbox<array_t>(xs_);
+				int len = xs.size();
+				for (auto i = 0; i < len; i++) {
+				
+					if (unbox<bool> (f_(boxed(xs[i])) ))
+					{
+						return just_(i);
+					}
+				};
+				return nothing_;
+			};
+		};
+	};
+};
+
+
+
 FOREIGN_END
 
 FOREIGN_BEGIN( Data_Array_ST )

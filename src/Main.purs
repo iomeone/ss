@@ -6,7 +6,7 @@ import Prelude hiding (between,when)
 
 import Control.Alt ((<|>))
 import Control.Lazy (fix)
-import Data.Array (some, fromFoldable)
+import Data.Array (some, fromFoldable, many)
 import Data.Char.Unicode (digitToInt, isAscii, isLetter)
 import Data.Either (Either(..))
 -- import Data.List (List(..), fromFoldable, many)
@@ -23,14 +23,12 @@ import Text.Parsing.Parser.Expr (Assoc(..), Operator(..), buildExprParser)
 import Text.Parsing.Parser.Language (javaStyle, haskellStyle, haskellDef)
 import Text.Parsing.Parser.Pos (Position(..), initialPos)
 import Text.Parsing.Parser.String (eof, string, char, satisfy, anyChar)
-import Text.Parsing.Parser.Token (TokenParser, match, when, token, makeTokenParser, digit)
+import Text.Parsing.Parser.Token (TokenParser, match, when, token, makeTokenParser, digit, alphaNum)
 
 
 
-notFollowedBy :: forall a. Parser String a -> Parser String Unit
-notFollowedBy p = try $ (try p *> fail "Negated parser succeeded") <|> pure unit
-
-
+parseTagName :: Parser String String
+parseTagName = fromCharArray <$> some  alphaNum
 
 
 
@@ -82,9 +80,9 @@ parseTest input p = case runParser input p of
 
 main :: Effect Unit
 main = do
-  log $ show $ fromFoldable (Just 1)
+--  log $ show $ fromFoldable (Just 1)
 --  log  "Parser In Cpp:"
---  parseTest "(zhuzhao)1212438" parseNameNum
+ parseTest "zhuzhao)1212438" parseTagName
 
 
 
