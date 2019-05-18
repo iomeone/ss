@@ -10,15 +10,35 @@ namespace Main {
 using namespace purescript;
 
 auto Kill() -> const boxed&;
+auto Attribute() -> const boxed&;
+auto Element() -> const boxed&;
+auto VoidElement() -> const boxed&;
+auto TextNode() -> const boxed&;
+auto CommentNode() -> const boxed&;
 auto showKill() -> boxed;
+auto showAttribute() -> boxed;
+auto showHTML() -> boxed;
 auto s1() -> const boxed&;
+auto parseTextNode() -> boxed;
 auto parseTest() -> const boxed&;
 auto parseTagName() -> boxed;
+auto parseCloseTag() -> const boxed&;
+auto parseAttributeValue() -> boxed;
+auto parseAttributeName() -> boxed;
+auto parseAttribute() -> boxed;
+auto parseAttributes() -> boxed;
 auto parens() -> boxed;
 auto parseNameNum() -> boxed;
 auto opTest() -> boxed;
+auto notClosedTag() -> boxed;
+auto parseOpenTag() -> boxed;
+auto parseVoidElement() -> boxed;
+auto parseNode() -> boxed;
+auto parseElement() -> boxed;
+auto parseHTML() -> const boxed&;
 auto main() -> boxed;
 auto factorial() -> const boxed&;
+auto eqAttribute() -> boxed;
 
 } // end namespace Main
 

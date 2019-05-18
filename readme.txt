@@ -114,3 +114,15 @@ int main(int argc, const char * argv[]) {
 
     return 0;
 }
+
+
+
+
+
+
+
+Data.String.fromCharArray <<< toUnfoldable   
+List -> String 
+Data.String.fromCharArray
+Array -> String
+
