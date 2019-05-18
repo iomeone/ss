@@ -6,10 +6,11 @@ import Prelude hiding (between,when)
 
 import Control.Alt ((<|>))
 import Control.Lazy (fix)
-import Data.Array (some)
+import Data.Array (some, fromFoldable)
 import Data.Char.Unicode (digitToInt, isAscii, isLetter)
 import Data.Either (Either(..))
-import Data.List (List(..), fromFoldable, many)
+-- import Data.List (List(..), fromFoldable, many)
+import Data.List (List(..), many)
 import Data.Maybe (Maybe(..))
 import Data.String.CodeUnits (fromCharArray, singleton)
 import Data.Tuple (Tuple(..))
@@ -28,6 +29,10 @@ import Text.Parsing.Parser.Token (TokenParser, match, when, token, makeTokenPars
 
 notFollowedBy :: forall a. Parser String a -> Parser String Unit
 notFollowedBy p = try $ (try p *> fail "Negated parser succeeded") <|> pure unit
+
+
+
+
 
 
 
@@ -77,9 +82,9 @@ parseTest input p = case runParser input p of
 
 main :: Effect Unit
 main = do
-
-  log  "Parser In Cpp:"
-  parseTest "(zhuzhao)1212438" parseNameNum
+  log $ show $ fromFoldable (Just 1)
+--  log  "Parser In Cpp:"
+--  parseTest "(zhuzhao)1212438" parseNameNum
 
 
 

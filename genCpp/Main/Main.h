@@ -17,7 +17,7 @@ auto parens() -> boxed;
 auto parseNameNum() -> boxed;
 auto opTest() -> boxed;
 auto notFollowedBy() -> const boxed&;
-auto main() -> const boxed&;
+auto main() -> boxed;
 auto factorial() -> const boxed&;
 
 } // end namespace Main

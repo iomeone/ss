@@ -37,8 +37,14 @@ exports["replicate"] = [](const boxed& n_) -> boxed {
 exports["fromFoldableImpl"] = [](const boxed& foldr_) -> boxed {
   std::cout << "--> fromFoldableImpl "<< std::endl;
   return [=](const boxed& xs_) -> boxed {
-    const auto& xs = unbox<array_t>(xs_);
-    return foldr_(cons_)(array_t())(xs);
+	
+	//auto foldr = unbox< std::function<boxed (const boxed& dictMonoid)>> (foldr_);
+ //   
+	//auto f1 = foldr_(cons_) (array_t()) (xs_);
+	
+	//const auto& xs = unbox<array_t>(xs_);
+
+    return foldr_ (cons_) (array_t()) (xs_);
   };
 };
  //foreign import cons :: forall a. a -> Array a -> Array a

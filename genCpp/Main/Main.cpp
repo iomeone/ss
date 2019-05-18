@@ -6,6 +6,7 @@
 #include "Data_Array/Data_Array.h"
 #include "Data_Char_Unicode/Data_Char_Unicode.h"
 #include "Data_Either/Data_Either.h"
+#include "Data_Foldable/Data_Foldable.h"
 #include "Data_Function/Data_Function.h"
 #include "Data_Functor/Data_Functor.h"
 #include "Data_Identity/Data_Identity.h"
@@ -70,7 +71,7 @@ auto parseTest() -> const boxed& {
                 if (unbox<dict_t>(v).contains("Left")) {
                     return Effect_Console::logShow()(Data_Show::showString())(Data_Semigroup::append()(Data_Semigroup::semigroupString())("error: ")(Data_Show::show()(Text_Parsing_Parser::showParseError())(v["value0"])));
                 };
-                THROW_("PatternMatchFailure: ""Failed pattern match at Main (line 71, column 21 - line 74, column 46): ");
+                THROW_("PatternMatchFailure: ""Failed pattern match at Main (line 76, column 21 - line 79, column 46): ");
             };
         };
     };
@@ -95,12 +96,8 @@ auto notFollowedBy() -> const boxed& {
     };
     return _;
 };
-auto main() -> const boxed& {
-    static const boxed _ = []() -> boxed {
-        Effect_Console::log()("Parser In Cpp:")();
-        return Main::parseTest()(Main::showKill())("(zhuzhao)1212438")(Main::parseNameNum())();
-    };
-    return _;
+auto main() -> boxed {
+    return Effect_Console::log()(Data_Show::show()(Data_Show::showArray()(Data_Show::showInt()))(Data_Array::fromFoldable()(Data_Foldable::foldableMaybe())(Data_Maybe::Just()(1))));
 };
 auto factorial() -> const boxed& {
     static const boxed _ = [](const boxed& v) -> boxed {
