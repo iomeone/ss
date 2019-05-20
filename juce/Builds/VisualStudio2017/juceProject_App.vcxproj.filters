@@ -1656,6 +1656,9 @@
     <ClCompile Include="..\..\Source\Main\MainComponent.cpp">
       <Filter>juceProject\Source\Main</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Main\ParseWin.cpp">
+      <Filter>juceProject\Source\Main</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Main\WinMain.cpp">
       <Filter>juceProject\Source\Main</Filter>
     </ClCompile>
@@ -3966,6 +3969,9 @@
       <Filter>juceProject\Source\Main</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Main\MainComponent.h">
+      <Filter>juceProject\Source\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Main\ParseWin.h">
       <Filter>juceProject\Source\Main</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Math\Math.h">

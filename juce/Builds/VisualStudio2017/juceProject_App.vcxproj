@@ -62,7 +62,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader />
       <AssemblerListingLocation>$(IntDir)\</AssemblerListingLocation>
-      <ObjectFileName>$(IntDir)\%(RelativeDir)\</ObjectFileName>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
       <ProgramDataBaseFileName>$(IntDir)\</ProgramDataBaseFileName>
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -347,6 +347,7 @@
     <ClCompile Include="..\..\Source\Global_Unsafe\Global_Unsafe.cpp" />
     <ClCompile Include="..\..\Source\Main\Main.cpp" />
     <ClCompile Include="..\..\Source\Main\MainComponent.cpp" />
+    <ClCompile Include="..\..\Source\Main\ParseWin.cpp" />
     <ClCompile Include="..\..\Source\Main\WinMain.cpp" />
     <ClCompile Include="..\..\Source\Math\Math.cpp" />
     <ClCompile Include="..\..\Source\Partial\Partial.cpp" />
@@ -2245,6 +2246,7 @@
     <ClInclude Include="..\..\Source\Global_Unsafe\Global_Unsafe.h" />
     <ClInclude Include="..\..\Source\Main\Main.h" />
     <ClInclude Include="..\..\Source\Main\MainComponent.h" />
+    <ClInclude Include="..\..\Source\Main\ParseWin.h" />
     <ClInclude Include="..\..\Source\Math\Math.h" />
     <ClInclude Include="..\..\Source\Partial\Partial.h" />
     <ClInclude Include="..\..\Source\Partial_Unsafe\Partial_Unsafe.h" />

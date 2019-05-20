@@ -1060,6 +1060,8 @@
         <FILE id="QU9Lax" name="MainComponent.cpp" compile="1" resource="0"
               file="Source/Main/MainComponent.cpp"/>
         <FILE id="Br7U4R" name="MainComponent.h" compile="0" resource="0" file="Source/Main/MainComponent.h"/>
+        <FILE id="v5dRkj" name="ParseWin.cpp" compile="1" resource="0" file="Source/Main/ParseWin.cpp"/>
+        <FILE id="gQc3of" name="ParseWin.h" compile="0" resource="0" file="Source/Main/ParseWin.h"/>
         <FILE id="n3Xp5s" name="WinMain.cpp" compile="1" resource="0" file="Source/Main/WinMain.cpp"/>
       </GROUP>
       <GROUP id="{2431DF57-3563-6EA7-A607-CEE9F020234B}" name="Math">

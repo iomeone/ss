@@ -909,6 +909,10 @@
 			isa = PBXBuildFile;
 			fileRef = 9DE677DA3E25F235671BFA0F;
 		};
+		CA054E7788A7F0A2A96E926B = {
+			isa = PBXBuildFile;
+			fileRef = 03B95866888BC18669ADE822;
+		};
 		417D0540009C39E65257E66F = {
 			isa = PBXBuildFile;
 			fileRef = 3D91BCC56895BC4DD647CAEF;
@@ -1069,6 +1073,13 @@
 			path = "../../Source/Data_Array_NonEmpty/Data_Array_NonEmpty.h";
 			sourceTree = "SOURCE_ROOT";
 		};
+		03B95866888BC18669ADE822 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = ParseWin.cpp;
+			path = ../../Source/Main/ParseWin.cpp;
+			sourceTree = "SOURCE_ROOT";
+		};
 		06F7D6F22AACB41A8E22C719 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
@@ -1193,6 +1204,13 @@
 			lastKnownFileType = sourcecode.cpp.cpp;
 			name = "Control_Monad_State_Class.cpp";
 			path = "../../Source/Control_Monad_State_Class/Control_Monad_State_Class.cpp";
+			sourceTree = "SOURCE_ROOT";
+		};
+		0E216684A22B578386B5419C = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = ParseWin.h;
+			path = ../../Source/Main/ParseWin.h;
 			sourceTree = "SOURCE_ROOT";
 		};
 		0E4F54EB4772886449075855 = {
@@ -6076,6 +6094,8 @@
 				605749FC9766E5E3BAB8B7E7,
 				9DE677DA3E25F235671BFA0F,
 				09F0EB34ADEDB13DABAFC5BB,
+				03B95866888BC18669ADE822,
+				0E216684A22B578386B5419C,
 				3D91BCC56895BC4DD647CAEF,
 			);
 			name = Main;
@@ -6970,6 +6990,7 @@
 				F1907CCCAEAA95D2A581CACB,
 				9432AFCB88CD2CF65648344E,
 				7639A53ED1105EF8BB627E72,
+				CA054E7788A7F0A2A96E926B,
 				417D0540009C39E65257E66F,
 				94E8010F2FC6BADA6F6AB91E,
 				BE910629824D8CBF2310959C,
