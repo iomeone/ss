@@ -36,6 +36,7 @@ auto parseVoidElement() -> boxed;
 auto parseNode() -> boxed;
 auto parseElement() -> boxed;
 auto parseHTML() -> const boxed&;
+auto getParseResultString() -> const boxed&;
 auto main() -> boxed;
 auto factorial() -> const boxed&;
 auto eqAttribute() -> boxed;

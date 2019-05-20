@@ -33,7 +33,8 @@
     Describe your class and how it works here!
                                                                     //[/Comments]
 */
-class ParseWin  : public Component
+class ParseWin  : public Component,
+                  TextEditor::Listener
 {
 public:
     //==============================================================================
@@ -42,6 +43,7 @@ public:
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
+	void textEditorTextChanged(TextEditor& txtEdt) override;
     //[/UserMethods]
 
     void paint (Graphics& g) override;
@@ -54,8 +56,8 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    std::unique_ptr<TextEditor> textEditor;
-    std::unique_ptr<TextEditor> textEditor2;
+    std::unique_ptr<TextEditor> _txtSrc;
+    std::unique_ptr<TextEditor> _txtDst;
 
 
     //==============================================================================

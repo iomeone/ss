@@ -286,8 +286,14 @@ auto parseHTML() -> const boxed& {
     };
     return _;
 };
+auto getParseResultString() -> const boxed& {
+    static const boxed _ = [](const boxed& strToParser) -> boxed {
+        return Data_Show::show()(Data_Either::showEither()(Text_Parsing_Parser::showParseError())(Data_List_Types::showList()(Main::showHTML())))(Main::parseHTML()(strToParser));
+    };
+    return _;
+};
 auto main() -> boxed {
-    return Effect_Console::log()(Data_Show::show()(Data_Either::showEither()(Text_Parsing_Parser::showParseError())(Data_List_Types::showList()(Main::showHTML())))(Main::parseHTML()("<html></html>")));
+    return Effect_Console::log()(Main::getParseResultString()("<html></html>"));
 };
 auto factorial() -> const boxed& {
     static const boxed _ = [](const boxed& v) -> boxed {

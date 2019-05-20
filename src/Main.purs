@@ -179,14 +179,16 @@ parseTest input p = case runParser input p of
     log $ "Parser result is: " <> show actual
   Left err -> logShow ("error: " <> show err) 
 
-
+getParseResultString :: String -> String
+getParseResultString strToParser = 
+	 show $ parseHTML strToParser
 
 main :: Effect Unit
 main = do
 --  log $ show $ fromFoldable (Just 1)
 --  log  "Parser In Cpp:"
 -- parseTest "zhuzhao)1212438" parseTagName
-	log $ show $ parseHTML "<html></html>"
+	log $ getParseResultString "<html></html>"
 
 
 
