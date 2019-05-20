@@ -997,6 +997,14 @@
 			isa = PBXBuildFile;
 			fileRef = 0E4F54EB4772886449075855;
 		};
+		880CD2E236ACDA021830B348 = {
+			isa = PBXBuildFile;
+			fileRef = BEC7F5EC139CB1BD1F94DC08;
+		};
+		7014FDE42D55407901C7D12F = {
+			isa = PBXBuildFile;
+			fileRef = 67E1F0956874A338FA7C6EF3;
+		};
 		C70A531BFA11F72B39824DA8 = {
 			isa = PBXBuildFile;
 			fileRef = 9C47D9A5118F6B3029E4118B;
@@ -2207,6 +2215,13 @@
 			path = "~/JUCE/modules/juce_opengl";
 			sourceTree = "<absolute>";
 		};
+		5FC1FE3E38BB51067DBD4748 = {
+			isa = PBXFileReference;
+			lastKnownFileType = file;
+			name = "ff_layout";
+			path = "../../Source/ffLayouts/ff_layout";
+			sourceTree = "SOURCE_ROOT";
+		};
 		605749FC9766E5E3BAB8B7E7 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
@@ -2289,6 +2304,13 @@
 			lastKnownFileType = sourcecode.cpp.cpp;
 			name = math.cpp;
 			path = ../../Source/ffi/latb/math.cpp;
+			sourceTree = "SOURCE_ROOT";
+		};
+		67E1F0956874A338FA7C6EF3 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = "include_ff_layoutItem.cpp";
+			path = "../../JuceLibraryCode/include_ff_layoutItem.cpp";
 			sourceTree = "SOURCE_ROOT";
 		};
 		67E527CDE0D419337E5920A6 = {
@@ -3437,6 +3459,13 @@
 			lastKnownFileType = sourcecode.cpp.cpp;
 			name = "Data_String_Unsafe.cpp";
 			path = "../../Source/Data_String_Unsafe/Data_String_Unsafe.cpp";
+			sourceTree = "SOURCE_ROOT";
+		};
+		BEC7F5EC139CB1BD1F94DC08 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = "include_ff_layout.cpp";
+			path = "../../JuceLibraryCode/include_ff_layout.cpp";
 			sourceTree = "SOURCE_ROOT";
 		};
 		BF09DE7A18E54C2305EDE4EC = {
@@ -6478,6 +6507,7 @@
 		772FFF2B65B76668A74138A2 = {
 			isa = PBXGroup;
 			children = (
+				5FC1FE3E38BB51067DBD4748,
 				BE5A9DBB2015CF29B4A195F7,
 				8B6A781A78536866016F2B9D,
 				AFB079E2FAFA31E925AA0019,
@@ -6500,6 +6530,8 @@
 				821530EC252CBF09B4450F25,
 				0E4F54EB4772886449075855,
 				5AEE687DD6EE159173BEDA71,
+				BEC7F5EC139CB1BD1F94DC08,
+				67E1F0956874A338FA7C6EF3,
 				9C47D9A5118F6B3029E4118B,
 				2606F004F7494084B8DCF56D,
 				36B7A1968490D02D12048F8E,
@@ -6593,6 +6625,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"../../JuceLibraryCode",
+					"../../Source/ffLayouts",
 					"$(HOME)/JUCE/modules",
 					"$(inherited)",
 				);
@@ -6637,6 +6670,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"../../JuceLibraryCode",
+					"../../Source/ffLayouts",
 					"$(HOME)/JUCE/modules",
 					"$(inherited)",
 				);
@@ -7012,6 +7046,8 @@
 				60D2BA51E6F99EAFE7DECD85,
 				77D2452D7487F65D84078D71,
 				C1001837FCB010088CEC4769,
+				880CD2E236ACDA021830B348,
+				7014FDE42D55407901C7D12F,
 				C70A531BFA11F72B39824DA8,
 				B54F8B486122D6710C74B283,
 				9E9B368F28104FAAA6505E57,

@@ -44,7 +44,7 @@ ParseWin::ParseWin ()
     _txtSrc->setPopupMenuEnabled (true);
     _txtSrc->setText (String());
 
-    _txtSrc->setBounds (32, 80, 400, 400);
+    _txtSrc->setBounds (40, 80, 900, 400);
 
     _txtDst.reset (new TextEditor ("new text editor"));
     addAndMakeVisible (_txtDst.get());
@@ -56,7 +56,7 @@ ParseWin::ParseWin ()
     _txtDst->setPopupMenuEnabled (true);
     _txtDst->setText (String());
 
-    _txtDst->setBounds (500, 80, 400, 400);
+    _txtDst->setBounds (40, 496, 900, 400);
 
 
     //[UserPreSize]
@@ -135,11 +135,11 @@ BEGIN_JUCER_METADATA
                  overlayOpacity="0.330" fixedSize="0" initialWidth="800" initialHeight="600">
   <BACKGROUND backgroundColour="ff323e44"/>
   <TEXTEDITOR name="new text editor" id="6e89aa47cb966f77" memberName="_txtSrc"
-              virtualName="" explicitFocusOrder="0" pos="32 80 400 400" initialText=""
+              virtualName="" explicitFocusOrder="0" pos="40 80 900 400" initialText=""
               multiline="1" retKeyStartsLine="1" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
   <TEXTEDITOR name="new text editor" id="c2bd58971f2f68ad" memberName="_txtDst"
-              virtualName="" explicitFocusOrder="0" pos="500 80 400 400" initialText=""
+              virtualName="" explicitFocusOrder="0" pos="40 496 900 400" initialText=""
               multiline="1" retKeyStartsLine="1" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
 </JUCER_COMPONENT>

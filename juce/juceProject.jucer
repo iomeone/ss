@@ -1186,6 +1186,7 @@
         <MODULEPATH id="juce_gui_basics" path="../../../../../../s/thirdParty/JUCE/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../../../../../s/thirdParty/JUCE/modules"/>
         <MODULEPATH id="juce_opengl" path="../../../../../../s/thirdParty/JUCE/modules"/>
+        <MODULEPATH id="ff_layout" path="Source/ffLayouts"/>
       </MODULEPATHS>
     </VS2017>
     <XCODE_MAC targetFolder="Builds/MacOSX" extraCompilerFlags="-I../../source">
@@ -1206,10 +1207,12 @@
         <MODULEPATH id="juce_audio_formats"/>
         <MODULEPATH id="juce_audio_devices"/>
         <MODULEPATH id="juce_audio_basics"/>
+        <MODULEPATH id="ff_layout" path="Source/ffLayouts"/>
       </MODULEPATHS>
     </XCODE_MAC>
   </EXPORTFORMATS>
   <MODULES>
+    <MODULE id="ff_layout" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
