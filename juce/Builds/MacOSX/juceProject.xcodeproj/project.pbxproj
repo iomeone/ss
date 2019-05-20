@@ -905,6 +905,14 @@
 			isa = PBXBuildFile;
 			fileRef = 158FF687897B04235AF7EC38;
 		};
+		7639A53ED1105EF8BB627E72 = {
+			isa = PBXBuildFile;
+			fileRef = 9DE677DA3E25F235671BFA0F;
+		};
+		417D0540009C39E65257E66F = {
+			isa = PBXBuildFile;
+			fileRef = 3D91BCC56895BC4DD647CAEF;
+		};
 		94E8010F2FC6BADA6F6AB91E = {
 			isa = PBXBuildFile;
 			fileRef = 32780F0EAA7B1F88B73C3CB6;
@@ -1101,6 +1109,13 @@
 			lastKnownFileType = file.7z;
 			name = "purescript-native-ffi-master-ex.7z";
 			path = "../../Source/ffi/purescript-native-ffi-master-ex.7z";
+			sourceTree = "SOURCE_ROOT";
+		};
+		09F0EB34ADEDB13DABAFC5BB = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = MainComponent.h;
+			path = ../../Source/Main/MainComponent.h;
 			sourceTree = "SOURCE_ROOT";
 		};
 		0A0DA14D2808438FA5B31958 = {
@@ -1745,6 +1760,13 @@
 			lastKnownFileType = sourcecode.c.h;
 			name = "Data_Newtype.h";
 			path = "../../Source/Data_Newtype/Data_Newtype.h";
+			sourceTree = "SOURCE_ROOT";
+		};
+		3D91BCC56895BC4DD647CAEF = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = WinMain.cpp;
+			path = ../../Source/Main/WinMain.cpp;
 			sourceTree = "SOURCE_ROOT";
 		};
 		3DA47D8B3F46B9808432BEE9 = {
@@ -2949,6 +2971,13 @@
 			lastKnownFileType = sourcecode.cpp.cpp;
 			name = "Data_Bounded.cpp";
 			path = "../../Source/Data_Bounded/Data_Bounded.cpp";
+			sourceTree = "SOURCE_ROOT";
+		};
+		9DE677DA3E25F235671BFA0F = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = MainComponent.cpp;
+			path = ../../Source/Main/MainComponent.cpp;
 			sourceTree = "SOURCE_ROOT";
 		};
 		9E3A3FF94602B613A7800145 = {
@@ -6045,6 +6074,9 @@
 			children = (
 				158FF687897B04235AF7EC38,
 				605749FC9766E5E3BAB8B7E7,
+				9DE677DA3E25F235671BFA0F,
+				09F0EB34ADEDB13DABAFC5BB,
+				3D91BCC56895BC4DD647CAEF,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -6937,6 +6969,8 @@
 				5B52C5D34ECAF039D56524C9,
 				F1907CCCAEAA95D2A581CACB,
 				9432AFCB88CD2CF65648344E,
+				7639A53ED1105EF8BB627E72,
+				417D0540009C39E65257E66F,
 				94E8010F2FC6BADA6F6AB91E,
 				BE910629824D8CBF2310959C,
 				1468911D59EF050E749B1E76,

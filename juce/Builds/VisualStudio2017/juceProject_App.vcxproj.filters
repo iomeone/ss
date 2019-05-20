@@ -1653,6 +1653,12 @@
     <ClCompile Include="..\..\Source\Main\Main.cpp">
       <Filter>juceProject\Source\Main</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Main\MainComponent.cpp">
+      <Filter>juceProject\Source\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Main\WinMain.cpp">
+      <Filter>juceProject\Source\Main</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Math\Math.cpp">
       <Filter>juceProject\Source\Math</Filter>
     </ClCompile>
@@ -3957,6 +3963,9 @@
       <Filter>juceProject\Source\Global_Unsafe</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Main\Main.h">
+      <Filter>juceProject\Source\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Main\MainComponent.h">
       <Filter>juceProject\Source\Main</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Math\Math.h">
