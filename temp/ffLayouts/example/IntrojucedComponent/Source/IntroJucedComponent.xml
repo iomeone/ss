@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Layout orientation="leftToRight" stretchX="-1" stretchY="-1">
+  <Layout orientation="topDown" stretchX="-1" stretchY="-1">
+    <Component componentName="textButton1"/>
+    <Component componentName="textButton2"/>
+    <Component componentName="textButton3"/>
+    <Component componentName="textButton4"/>
+    <Component componentName="textButton5"/>
+  </Layout>
+  <Splitter isHorizontal="1" componentID="splitter" minWidth="3" maxWidth="3" relativeMaxPosition="0.7" relativePosition="0.3"/>
+  <Layout orientation="topDown" stretchX="-1" stretchY="-1">
+    <Component labelText="Some Controls" minHeight="25" maxHeight="25" labelFontSize="25"/>
+    <Layout orientation="leftToRight" stretchX="-1" stretchY="-1">
+      <Layout orientation="topDown" stretchX="-1" stretchY="-1">
+        <Component componentName="slider1" aspectRatio="1.0" paddingLeft="5" paddingRight="5"/>
+        <Component labelText="MySlider 1" minHeight="18" maxHeight="18"/>
+        <Spacer stretchX="1" stretchY="1"/>
+      </Layout>
+      <Layout orientation="topDown" stretchX="-1" stretchY="-1">
+        <Component componentName="slider2" aspectRatio="1.0" paddingLeft="5" paddingRight="5"/>
+        <Component labelText="MySlider 2" minHeight="18" maxHeight="18"/>
+        <Spacer stretchX="1" stretchY="1"/>
+      </Layout>
+      <Layout orientation="topDown" stretchX="-1" stretchY="-1">
+        <Component componentName="slider3" aspectRatio="1.0" paddingLeft="5" paddingRight="5"/>
+        <Component labelText="MySlider 3" minHeight="18" maxHeight="18"/>
+        <Spacer stretchX="1" stretchY="1"/>
+      </Layout>
+    </Layout>
+    <Spacer stretchX="1" stretchY="1"/>
+    <Layout orientation="topDown" stretchX="-1" stretchY="-1" groupText="Splitter Position" paddingLeft="10" paddingRight="10" paddingTop="20" paddingBottom="10">
+      <Component componentName="new label"/>
+    </Layout>
+  </Layout>
+</Layout>
