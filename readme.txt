@@ -6,7 +6,11 @@ psc-package install
 
 psc-package install effect
 
-purs compile src/Main.purs --codegen corefn --output output 
+psc-package install console
+
+psc-package build
+
+purs compile --codegen corefn --output output 
 
 pscpp --makefile
 
