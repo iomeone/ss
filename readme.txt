@@ -4,7 +4,9 @@ psc-package updates
 
 psc-package install
 
-purs compile --codegen corefn --output output 
+psc-package install effect
+
+purs compile src/Main.purs --codegen corefn --output output 
 
 pscpp --makefile
 
@@ -98,7 +100,7 @@ int main(int argc, const char * argv[]) {
     //Main::main()();
 	//juce::String s = CharPointer_UTF8("\xe4\xbd\xa0\xe6\x98\xaf\xe8\xb0\x81\xf0\x9d\x85\xa2");
 
-	juce::String s = CharPointer_UTF8("ÖĞÎÄ¿ÉÒÔÒ»¸öÒ»¸öÊä³öÀ² ·±ów×ÖÒ²Ò»‚€‚€İ”³ö");
+	juce::String s = CharPointer_UTF8("ä¸­æ–‡å¯ä»¥ä¸€ä¸ªä¸€ä¸ªè¾“å‡ºå•¦ ç¹é«”å­—ä¹Ÿä¸€å€‹å€‹è¼¸å‡º");
 	wcout.imbue(locale("", LC_CTYPE));
 
 	for(int i = 0 ; i < s.length(); i++)
